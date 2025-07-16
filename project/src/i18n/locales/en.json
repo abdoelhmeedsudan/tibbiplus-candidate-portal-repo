@@ -1,0 +1,385 @@
+{
+  "common": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "hire": "Hire",
+    "clinics": "Clinics",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "search": "Search",
+    "filter": "Filter",
+    "apply": "Apply",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "jobs": "Job Search",
+    "hire": "Hire Staff",
+    "clinics": "Medical Clinics",
+    "contact": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Integrated Medical Platform",
+      "subtitle": "Search for medical jobs, hire talent, and manage your clinic efficiently",
+      "cta": "Get Started",
+      "secondaryCta": "Learn More"
+    },
+    "features": {
+      "title": "Platform Features",
+      "jobSearch": {
+        "title": "Job Search",
+        "description": "Find the best medical jobs in your area"
+      },
+      "staffHiring": {
+        "title": "Staff Hiring",
+        "description": "Hire the best medical talent for your clinic"
+      },
+      "clinicManagement": {
+        "title": "Clinic Management",
+        "description": "Manage your clinic with high efficiency"
+      }
+    },
+    "statistics": {
+      "title": "Platform Statistics",
+      "subtitle": "Growing with us every day to serve the healthcare sector in the Kingdom",
+      "jobs": "Available Jobs",
+      "clinics": "Registered Clinics",
+      "professionals": "Medical Professionals",
+      "successRate": "Success Rate"
+    }
+  },
+  "jobs": {
+    "title": "Medical Job Search",
+    "subtitle": "Find your perfect opportunity in the healthcare sector",
+    "searchPlaceholder": "Search for job, specialty, or location...",
+    "noResults": "No jobs found matching your search criteria",
+    "filters": {
+      "title": "Filter Results",
+      "specialty": "Specialty",
+      "location": "Location",
+      "experience": "Experience",
+      "salary": "Salary",
+      "type": "Job Type"
+    },
+    "jobCard": {
+      "apply": "Apply for Job",
+      "viewDetails": "View Details",
+      "posted": "Posted",
+      "salary": "Salary",
+      "location": "Location",
+      "experience": "Experience",
+      "featured": "Featured Job"
+    }
+  },
+  "hire": {
+    "title": "Hire Medical Staff",
+    "postJob": "Post New Job",
+    "manageJobs": "Manage Jobs",
+    "applications": "Applications",
+    "form": {
+      "title": "Job Details",
+      "jobTitle": "Job Title",
+      "specialty": "Specialty",
+      "description": "Job Description",
+      "requirements": "Requirements",
+      "salary": "Salary",
+      "location": "Location",
+      "type": "Job Type",
+      "experience": "Required Experience"
+    }
+  },
+  "clinics": {
+    "title": "Medical Clinics",
+    "searchPlaceholder": "Search for clinic or specialty...",
+    "filters": {
+      "title": "Filter Clinics",
+      "specialty": "Specialty",
+      "location": "Location",
+      "rating": "Rating",
+      "insurance": "Insurance"
+    },
+    "clinicCard": {
+      "viewDetails": "View Details",
+      "book": "Book Appointment",
+      "rating": "Rating",
+      "location": "Location",
+      "specialties": "Specialties"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help. Contact us for any inquiries",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "email": "Email Address",
+      "password": "Password",
+      "rememberMe": "Remember Me",
+      "forgotPassword": "Forgot Password?",
+      "login": "Login",
+      "noAccount": "Don't have an account?",
+      "register": "Register"
+    },
+    "register": {
+      "title": "Create New Account",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "agree": "I agree to the Terms and Conditions",
+      "register": "Register",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    }
+  },
+  "personalInfo": {
+    "title": "Personal Information",
+    "subtitle": "Complete your personal and professional information",
+    "steps": {
+      "personalInfo": "Personal Information",
+      "education": "Education",
+      "skills": "Skills",
+      "experience": "Experience"
+    },
+    "personalInfo": {
+      "fullNameAr": "Full Name (Arabic)",
+      "fullNameEn": "Full Name (English)",
+      "nationality": "Nationality",
+      "idNumber": "ID Number",
+      "passportNumber": "Passport Number",
+      "passportExpiry": "Passport Expiry Date",
+      "birthDate": "Birth Date",
+      "gender": "Gender",
+      "maritalStatus": "Marital Status",
+      "city": "City",
+      "countryCode": "Country Code",
+      "mobile": "Mobile Number",
+      "email": "Email Address",
+      "jobTitle": "Job Title",
+      "summaryAr": "Summary (Arabic)",
+      "summaryEn": "Summary (English)",
+      "preferencesAr": "Preferences (Arabic)",
+      "preferencesEn": "Preferences (English)"
+    },
+    "education": {
+      "title": "Education",
+      "institutionAr": "Institution (Arabic)",
+      "institutionEn": "Institution (English)",
+      "degreeAr": "Degree (Arabic)",
+      "degreeEn": "Degree (English)",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "notesAr": "Notes (Arabic)",
+      "notesEn": "Notes (English)",
+      "addNew": "Add New Education"
+    },
+    "skills": {
+      "title": "Skills",
+      "skillNameAr": "Skill Name (Arabic)",
+      "skillNameEn": "Skill Name (English)",
+      "proficiencyLevelAr": "Proficiency Level (Arabic)",
+      "proficiencyLevelEn": "Proficiency Level (English)",
+      "yearsOfExperience": "Years of Experience",
+      "addNew": "Add New Skill"
+    },
+    "experience": {
+      "title": "Experience",
+      "companyAr": "Company Name (Arabic)",
+      "companyEn": "Company Name (English)",
+      "jobTitle": "Job Title",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "responsibilitiesAr": "Responsibilities (Arabic)",
+      "responsibilitiesEn": "Responsibilities (English)",
+      "addNew": "Add New Experience"
+    },
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next",
+      "save": "Save Information"
+    },
+    "selectOptions": {
+      "selectNationality": "Select Nationality",
+      "selectMaritalStatus": "Select Marital Status",
+      "selectCity": "Select City",
+      "selectGender": "Select Gender",
+      "selectJobTitle": "Select Job Title",
+      "selectLevel": "Select Level",
+      "male": "Male",
+      "female": "Female"
+    }
+  },
+  "quickLinks": {
+    "title": "Quick Links",
+    "medicalJobs": "Medical Jobs",
+    "dentalTechnicians": "Dental Technicians",
+    "medicalEngineers": "Medical Device Engineers",
+    "medicalClinics": "Medical Clinics"
+  },
+  "footer": {
+    "about": "About Platform",
+    "services": "Services",
+    "support": "Support",
+    "legal": "Legal",
+    "copyright": "All Rights Reserved"
+  },
+  "profile": {
+    "dropdown": {
+      "title": "Profile",
+      "login": "Login",
+      "register": "Register",
+      "personalInfo": "Personal Information",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "dropdown": {
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "placeholders": {
+    "search": "Search here...",
+    "email": "Enter your email",
+    "password": "Enter your password",
+    "name": "Enter your full name",
+    "phone": "Enter your phone number",
+    "message": "Write your message here...",
+    "select": "Select from list"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "password": "Password must be at least 8 characters",
+    "confirmPassword": "Passwords do not match",
+    "phone": "Please enter a valid phone number",
+    "minLength": "Field must be at least {{min}} characters",
+    "maxLength": "Field must not exceed {{max}} characters"
+  },
+  "messages": {
+    "welcome": "Welcome to Health Candidate Portal",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "An error occurred",
+    "noData": "No data available",
+    "tryAgain": "Try again",
+    "backToHome": "Back to Home"
+  },
+  "actions": {
+    "create": "Create",
+    "update": "Update",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "continue": "Continue",
+    "finish": "Finish",
+    "reset": "Reset",
+    "export": "Export",
+    "import": "Import"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "dates": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "thisYear": "This Year",
+    "lastYear": "Last Year"
+  },
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "days": "days",
+    "weeks": "weeks",
+    "months": "months",
+    "years": "years"
+  },
+  "numbers": {
+    "zero": "zero",
+    "one": "one",
+    "two": "two",
+    "three": "three",
+    "four": "four",
+    "five": "five",
+    "six": "six",
+    "seven": "seven",
+    "eight": "eight",
+    "nine": "nine",
+    "ten": "ten"
+  },
+  "medical": {
+    "specialties": {
+      "cardiology": "Cardiology",
+      "dermatology": "Dermatology",
+      "neurology": "Neurology",
+      "orthopedics": "Orthopedics",
+      "pediatrics": "Pediatrics",
+      "psychiatry": "Psychiatry",
+      "radiology": "Radiology",
+      "surgery": "Surgery",
+      "internal": "Internal Medicine",
+      "emergency": "Emergency Medicine"
+    },
+    "jobTypes": {
+      "fullTime": "Full Time",
+      "partTime": "Part Time",
+      "contract": "Contract",
+      "freelance": "Freelance",
+      "internship": "Internship"
+    },
+    "experienceLevels": {
+      "entry": "Entry Level",
+      "junior": "Junior",
+      "mid": "Mid Level",
+      "senior": "Senior",
+      "lead": "Team Lead",
+      "manager": "Manager"
+    }
+  }
+} 
