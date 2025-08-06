@@ -6,6 +6,7 @@ import ClinicsPage from './pages/ClinicsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ContactPage from './pages/ContactPage';
+import PersonalInfoPage from './pages/PersonalInfoPage';
 import Layout from './components/Layout';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -23,7 +24,7 @@ function App() {
               <Route path="hire" element={<HireStaffPage />} />
               <Route path="clinics" element={<ClinicsPage />} />
               <Route path="contact" element={<ContactPage />} />
-             
+            <Route path="personal-info" element={<PersonalInfoPage />} />
             </Route>
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />

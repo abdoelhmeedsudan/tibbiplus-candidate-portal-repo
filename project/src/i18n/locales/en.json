@@ -176,6 +176,28 @@
       "skills": "Skills",
       "experience": "Experience"
     },
+    "sections": {
+      "personalInfo": "Personal Information",
+      "summary": "Summary & Preferences",
+      "cvUpload": "CV Upload",
+      "education": "Education",
+      "experience": "Experience",
+      "skills": "Skills"
+    },
+    "actions": {
+      "edit": "Edit",
+      "view": "View",
+      "save": "Save",
+      "saving": "Saving...",
+      "add": "Add",
+      "remove": "Remove",
+      "chooseFile": "Choose File"
+    },
+    "messages": {
+      "manageInfo": "Manage your personal and professional information",
+      "maxFileSize": "Maximum size: 5MB",
+      "cvFile": "CV File (PDF)"
+    },
     "personalInfo": {
       "fullNameAr": "Full Name (Arabic)",
       "fullNameEn": "Full Name (English)",

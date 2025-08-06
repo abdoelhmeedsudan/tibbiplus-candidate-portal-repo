@@ -176,6 +176,28 @@
       "skills": "المهارات",
       "experience": "الخبرات"
     },
+    "sections": {
+      "personalInfo": "المعلومات الشخصية",
+      "summary": "الملخص والتفضيلات",
+      "cvUpload": "رفع السيرة الذاتية",
+      "education": "التعليم",
+      "experience": "الخبرات",
+      "skills": "المهارات"
+    },
+    "actions": {
+      "edit": "تعديل",
+      "view": "عرض",
+      "save": "حفظ",
+      "saving": "حفظ...",
+      "add": "إضافة",
+      "remove": "حذف",
+      "chooseFile": "اختر ملف"
+    },
+    "messages": {
+      "manageInfo": "إدارة معلوماتك الشخصية والمهنية",
+      "maxFileSize": "الحد الأقصى: 5 ميجابايت",
+      "cvFile": "ملف السيرة الذاتية (PDF)"
+    },
     "personalInfo": {
       "fullNameAr": "الاسم الكامل (عربي)",
       "fullNameEn": "الاسم الكامل (إنجليزي)",

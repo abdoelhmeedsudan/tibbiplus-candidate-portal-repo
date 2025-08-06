@@ -196,7 +196,7 @@ const Navbar = () => {
                         onClick={() => setIsProfileDropdownOpen(false)}
                       >
                         <UserCheck className="w-4 h-4 ml-3" />
-                        {t('profile.dropdown.personalInfo')}
+                        {t('personalInfo.title')}
                       </Link>
                       <div className="border-t border-gray-100 mt-2 pt-2">
                         <Link
