@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-green-50">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <a href="index.html" class="flex items-center justify-center space-x-2 mb-8">
+                    <div class="bg-blue-600 p-3 rounded-xl">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-sm text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">تسجيل الدخول</h2>
+                <p class="text-gray-600">ادخل إلى حسابك للوصول لجميع الميزات</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <form id="loginForm" class="space-y-6">
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            البريد الإلكتروني
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="أدخل بريدك الإلكتروني"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            كلمة المرور
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-lock absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                required
+                                class="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="أدخل كلمة المرور"
+                            />
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="absolute left-3 top-3 text-gray-400 hover:text-gray-600 transition-colors"
+                            >
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input
+                                id="rememberMe"
+                                name="rememberMe"
+                                type="checkbox"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                            />
+                            <label for="rememberMe" class="mr-2 block text-sm text-gray-700">
+                                تذكرني
+                            </label>
+                        </div>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-700 transition-colors">
+                            نسيت كلمة المرور؟
+                        </a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors font-medium text-lg"
+                    >
+                        تسجيل الدخول
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300" />
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">أو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">
+                        ليس لديك حساب؟{' '}
+                        <a href="register.html" class="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                            إنشاء حساب جديد
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User Type Selection -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">نوع المستخدم</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="personal-info.html" class="p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all text-center group">
+                        <div class="text-blue-600 group-hover:text-blue-700 font-medium">باحث عن عمل</div>
+                        <div class="text-sm text-gray-500 mt-1">للمهنيين الصحيين</div>
+                    </a>
+                    <a href="dashboard.html" class="p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all text-center group">
+                        <div class="text-green-600 group-hover:text-green-700 font-medium">صاحب عمل</div>
+                        <div class="text-sm text-gray-500 mt-1">للمؤسسات الصحية</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

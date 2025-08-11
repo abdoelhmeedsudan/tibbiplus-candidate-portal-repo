@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الوظيفة - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Navigation -->
+            <div class="mb-6">
+                <a href="jobs.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+                    <i class="fas fa-arrow-right ml-1"></i>
+                    العودة إلى الوظائف
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <!-- Job Header -->
+                        <div class="border-b border-gray-200 pb-6 mb-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h1 class="text-3xl font-bold text-gray-900 mb-2">طبيب باطني</h1>
+                                    <div class="flex items-center space-x-4 text-gray-600 mb-4">
+                                        <div class="flex items-center space-x-1">
+                                            <i class="fas fa-building"></i>
+                                            <span class="font-medium">مستشفى الملك فيصل التخصصي</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>الرياض</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <i class="fas fa-clock"></i>
+                                            <span>منذ يومين</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">
+                                        <i class="fas fa-heart text-lg"></i>
+                                    </button>
+                                    <button class="p-2 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-colors">
+                                        <i class="fas fa-share text-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                    <i class="fas fa-dollar-sign text-green-600 text-xl mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">15,000 - 20,000 ريال</div>
+                                    <div class="text-xs text-gray-500">الراتب الشهري</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                    <i class="fas fa-clock text-blue-600 text-xl mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">دوام كامل</div>
+                                    <div class="text-xs text-gray-500">نوع العمل</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                    <i class="fas fa-users text-purple-600 text-xl mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">3-5 سنوات</div>
+                                    <div class="text-xs text-gray-500">الخبرة المطلوبة</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4 text-center">
+                                    <i class="fas fa-calendar text-orange-600 text-xl mb-2"></i>
+                                    <div class="text-sm font-medium text-gray-900">23</div>
+                                    <div class="text-xs text-gray-500">متقدم</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Description -->
+                        <section class="mb-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">وصف الوظيفة</h2>
+                            <div class="prose prose-gray max-w-none">
+                                <p class="text-gray-700 leading-relaxed">
+                                    نبحث عن طبيب باطني مؤهل ومتمرس للانضمام إلى فريقنا الطبي المتميز في مستشفى الملك فيصل التخصصي. 
+                                    سيكون المرشح المثالي مسؤولاً عن تقديم رعاية طبية شاملة للمرضى البالغين في قسم الطب الباطني.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mt-4">
+                                    سيشمل هذا الدور تشخيص وعلاج مجموعة واسعة من الحالات الطبية، والعمل بشكل وثيق مع فريق متعدد التخصصات 
+                                    لضمان أفضل النتائج للمرضى. نحن نقدر الالتزام بأعلى معايير الرعاية الطبية والتطوير المهني المستمر.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Responsibilities -->
+                        <section class="mb-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">المسؤوليات والمهام</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">تشخيص وعلاج الأمراض الباطنية المختلفة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">إدارة الحالات المعقدة والمزمنة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">التعاون مع الفريق الطبي متعدد التخصصات</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">متابعة المرضى وتطوير خطط العلاج</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">الحفاظ على السجلات الطبية والتوثيق الدقيق</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">المشاركة في التعليم الطبي والأنشطة التدريبية</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <span class="text-gray-700">الالتزام بمعايير الجودة والسلامة</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Requirements -->
+                        <section class="mb-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">المتطلبات والمؤهلات</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">بكالوريوس الطب والجراحة من جامعة معتمدة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">شهادة اختصاص في الطب الباطني</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">رخصة مزاولة المهنة من الهيئة السعودية للتخصصات الصحية</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">خبرة لا تقل عن 3 سنوات في الطب الباطني</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">إجادة اللغة الإنجليزية تحدثاً وكتابة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">مهارات تواصل ممتازة مع المرضى والزملاء</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">القدرة على العمل تحت الضغط</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700">الالتزام بأخلاقيات المهنة الطبية</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Benefits -->
+                        <section>
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-4">المزايا والحوافز</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">راتب تنافسي يتراوح بين 15,000 - 20,000 ريال</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">التأمين الصحي الشامل للموظف والعائلة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">إجازة سنوية مدفوعة 30 يوم</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">برامج التطوير المهني والتدريب المستمر</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">بدل سكن أو سكن مؤثث</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">بدل مواصلات</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">بيئة عمل متطورة ومحفزة</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1"></i>
+                                    <span class="text-gray-700">فرص التقدم الوظيفي</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <!-- Apply Section -->
+                    <div class="bg-white rounded-xl shadow-md p-6 mb-6 sticky top-24">
+                        <button id="applyBtn" class="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg mb-4">
+                            تقدم للوظيفة الآن
+                        </button>
+                        <div class="text-center text-sm text-gray-600 mb-4">
+                            23 شخص تقدم لهذه الوظيفة
+                        </div>
+                        <div class="border-t pt-4">
+                            <p class="text-sm text-gray-700 mb-2">تحتاج إلى تسجيل الدخول أو إنشاء حساب للتقديم</p>
+                            <a href="login.html" class="block w-full text-center border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                                تسجيل الدخول
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">معلومات الشركة</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-1">مستشفى الملك فيصل التخصصي</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    يعتبر مستشفى الملك فيصل التخصصي ومركز الأبحاث واحداً من أرقى المؤسسات الطبية في المملكة العربية السعودية والشرق الأوسط. 
+                                    نحن ملتزمون بتقديم أعلى مستوى من الرعاية الصحية المتخصصة والأبحاث الطبية.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 pt-4 border-t">
+                                <div>
+                                    <div class="text-sm text-gray-500">عدد الموظفين</div>
+                                    <div class="font-medium text-gray-900">5000+</div>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">تأسست</div>
+                                    <div class="font-medium text-gray-900">1975</div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t">
+                                <a href="https://www.kfshrc.edu.sa" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 text-sm transition-colors">
+                                    زيارة موقع الشركة →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="job-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التوظيف - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">لوحة التوظيف</h1>
+                <p class="text-gray-600">إدارة الوظائف ومراجعة طلبات المتقدمين</p>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="mb-8">
+                <div class="border-b border-gray-200">
+                    <nav class="flex space-x-8">
+                        <button class="tab-btn flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors border-blue-500 text-blue-600" data-tab="overview">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>لوحة المعلومات</span>
+                        </button>
+                        <button class="tab-btn flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="jobs">
+                            <i class="fas fa-briefcase"></i>
+                            <span>إدارة الوظائف</span>
+                        </button>
+                        <button class="tab-btn flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="applications">
+                            <i class="fas fa-users"></i>
+                            <span>الطلبات</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overview-tab" class="tab-content space-y-8">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">إجمالي الوظائف</p>
+                                <p class="text-3xl font-bold text-gray-900">12</p>
+                            </div>
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-briefcase text-blue-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-600 text-sm font-medium">+2 هذا الشهر</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">الوظائف النشطة</p>
+                                <p class="text-3xl font-bold text-gray-900">8</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i class="fas fa-briefcase text-green-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-blue-600 text-sm font-medium">67% من الإجمالي</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">الطلبات</p>
+                                <p class="text-3xl font-bold text-gray-900">147</p>
+                            </div>
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <i class="fas fa-users text-purple-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-600 text-sm font-medium">+12 هذا الأسبوع</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">المقابلات</p>
+                                <p class="text-3xl font-bold text-gray-900">23</p>
+                            </div>
+                            <div class="bg-orange-100 p-3 rounded-lg">
+                                <i class="fas fa-eye text-orange-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-blue-600 text-sm font-medium">5 هذا الأسبوع</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">النشاط الأخير</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg">
+                            <div class="bg-blue-100 p-2 rounded-lg">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">طلب جديد لوظيفة طبيب باطني</p>
+                                <p class="text-xs text-gray-500">د. أحمد الأحمد - منذ ساعتين</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-green-50 rounded-lg">
+                            <div class="bg-green-100 p-2 rounded-lg">
+                                <i class="fas fa-briefcase text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">تم نشر وظيفة جديدة: أخصائي أشعة</p>
+                                <p class="text-xs text-gray-500">منذ يوم واحد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs Management Tab -->
+            <div id="jobs-tab" class="tab-content space-y-6 hidden">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                            <input type="text" placeholder="البحث في الوظائف..." class="pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <button class="flex items-center space-x-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-filter"></i>
+                            <span>فلترة</span>
+                        </button>
+                    </div>
+                    <button id="addJobBtn" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة وظيفة جديدة</span>
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">المسمى الوظيفي</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">القسم</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الموقع</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الحالة</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">المتقدمين</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">تاريخ النشر</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="font-medium text-gray-900">طبيب باطني</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">الطب الباطني</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">الرياض</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">نشط</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">23</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2025-01-10</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900 transition-colors">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-green-600 hover:text-green-900 transition-colors">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900 transition-colors">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="font-medium text-gray-900">ممرض/ممرضة العناية المركزة</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">التمريض</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">جدة</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">نشط</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2025-01-08</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900 transition-colors">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-green-600 hover:text-green-900 transition-colors">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900 transition-colors">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="font-medium text-gray-900">صيدلي إكلينيكي</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">الصيدلة</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">الدمام</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">منتهي</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">31</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-12-15</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900 transition-colors">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="text-green-600 hover:text-green-900 transition-colors">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900 transition-colors">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Applications Tab -->
+            <div id="applications-tab" class="tab-content space-y-6 hidden">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                            <input type="text" placeholder="البحث في الطلبات..." class="pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>جميع الحالات</option>
+                            <option>قيد المراجعة</option>
+                            <option>مقبول للمقابلة</option>
+                            <option>مرفوض</option>
+                        </select>
+                    </div>
+                    <button class="flex items-center space-x-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-download"></i>
+                        <span>تصدير</span>
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">المتقدم</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الوظيفة</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الخبرة</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الحالة</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">تاريخ التقديم</th>
+                                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div>
+                                        <div class="font-medium text-gray-900">د. أحمد الأحمد</div>
+                                        <div class="text-sm text-gray-500">ahmed@example.com</div>
+                                        <div class="text-sm text-gray-500">+966501234567</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">طبيب باطني</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5 سنوات</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">قيد المراجعة</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2025-01-12</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900 transition-colors">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded hover:bg-green-200 transition-colors">قبول</button>
+                                        <button class="px-2 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200 transition-colors">رفض</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div>
+                                        <div class="font-medium text-gray-900">سارة محمد</div>
+                                        <div class="text-sm text-gray-500">sara@example.com</div>
+                                        <div class="text-sm text-gray-500">+966507654321</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">ممرض/ممرضة العناية المركزة</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 سنوات</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">مقبول للمقابلة</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2025-01-11</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex items-center space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900 transition-colors">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="px-2 py-1 text-xs bg-green-100 text-green-800 rounded hover:bg-green-200 transition-colors">قبول</button>
+                                        <button class="px-2 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200 transition-colors">رفض</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Job Form Modal -->
+            <div id="jobFormModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+                <div class="bg-white rounded-xl max-w-2xl w-full max-h-screen overflow-y-auto p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-gray-900">إضافة وظيفة جديدة</h3>
+                        <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+
+                    <form id="jobForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">المسمى الوظيفي</label>
+                                <input type="text" name="jobTitle" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">القسم</label>
+                                <select name="department" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">اختر القسم</option>
+                                    <option value="internal-medicine">الطب الباطني</option>
+                                    <option value="surgery">الجراحة</option>
+                                    <option value="pediatrics">طب الأطفال</option>
+                                    <option value="nursing">التمريض</option>
+                                    <option value="pharmacy">الصيدلة</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">الموقع</label>
+                                <select name="location" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">اختر الموقع</option>
+                                    <option value="riyadh">الرياض</option>
+                                    <option value="jeddah">جدة</option>
+                                    <option value="dammam">الدمام</option>
+                                    <option value="mecca">مكة المكرمة</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">نوع العمل</label>
+                                <select name="jobType" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">اختر نوع العمل</option>
+                                    <option value="full-time">دوام كامل</option>
+                                    <option value="part-time">دوام جزئي</option>
+                                    <option value="shifts">نوبات</option>
+                                    <option value="temporary">مؤقت</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">وصف الوظيفة</label>
+                            <textarea name="jobDescription" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="اكتب وصف الوظيفة هنا..."></textarea>
+                        </div>
+
+                        <div class="flex justify-end space-x-4">
+                            <button type="button" id="cancelJob" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">إلغاء</button>
+                            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">نشر الوظيفة</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

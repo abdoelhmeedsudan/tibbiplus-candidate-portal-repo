@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات الحساب - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">إعدادات الحساب</h1>
+                <p class="text-gray-600">إدارة معلوماتك الشخصية وإعدادات الحساب</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <!-- Profile Picture -->
+                        <div class="text-center mb-6">
+                            <div class="relative inline-block">
+                                <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                                    <i class="fas fa-user text-4xl text-blue-600"></i>
+                                </div>
+                                <button class="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-camera text-sm"></i>
+                                </button>
+                            </div>
+                            <h3 class="font-semibold text-gray-900 mt-4">د. أحمد الأحمد</h3>
+                            <p class="text-sm text-gray-600">طبيب باطني</p>
+                            <p class="text-xs text-gray-500 mt-1">عضو منذ يناير 2024</p>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav class="space-y-2">
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors bg-blue-50 text-blue-600 border border-blue-200" data-tab="profile">
+                                <i class="fas fa-user ml-2"></i>
+                                الملف الشخصي
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="settings">
+                                <i class="fas fa-cog ml-2"></i>
+                                الإعدادات
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="notifications">
+                                <i class="fas fa-bell ml-2"></i>
+                                الإشعارات
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="privacy">
+                                <i class="fas fa-shield-alt ml-2"></i>
+                                الخصوصية
+                            </button>
+                        </nav>
+
+                        <!-- Logout Button -->
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <button class="w-full flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors text-right">
+                                <i class="fas fa-sign-out-alt ml-2"></i>
+                                تسجيل الخروج
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <!-- Profile Tab -->
+                        <div id="profile-tab" class="tab-content">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-semibold text-gray-900">المعلومات الشخصية</h2>
+                                <a href="personal-info-edit.html" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-edit text-sm"></i>
+                                    <span>تعديل المعلومات</span>
+                                </a>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">الاسم الكامل</label>
+                                    <p class="text-lg font-medium text-gray-900">د. أحمد الأحمد</p>
+                                </div>
+
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">البريد الإلكتروني</label>
+                                    <p class="text-lg font-medium text-gray-900">ahmed@example.com</p>
+                                </div>
+
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">رقم الهاتف</label>
+                                    <p class="text-lg font-medium text-gray-900">+966501234567</p>
+                                </div>
+
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">التخصص</label>
+                                    <p class="text-lg font-medium text-gray-900">طب باطني</p>
+                                </div>
+
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">سنوات الخبرة</label>
+                                    <p class="text-lg font-medium text-gray-900">5 سنوات</p>
+                                </div>
+
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <label class="block text-sm font-medium text-gray-600 mb-1">المدينة</label>
+                                    <p class="text-lg font-medium text-gray-900">الرياض</p>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="p-4 border border-gray-200 rounded-lg text-center">
+                                    <div class="text-2xl font-bold text-blue-600">12</div>
+                                    <div class="text-sm text-gray-600">وظيفة تم التقديم لها</div>
+                                </div>
+                                <div class="p-4 border border-gray-200 rounded-lg text-center">
+                                    <div class="text-2xl font-bold text-green-600">3</div>
+                                    <div class="text-sm text-gray-600">مقابلات مجدولة</div>
+                                </div>
+                                <div class="p-4 border border-gray-200 rounded-lg text-center">
+                                    <div class="text-2xl font-bold text-purple-600">87%</div>
+                                    <div class="text-sm text-gray-600">اكتمال الملف الشخصي</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Settings Tab -->
+                        <div id="settings-tab" class="tab-content hidden">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-6">إعدادات الحساب</h2>
+
+                            <div class="space-y-6">
+                                <!-- Language Settings -->
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">اللغة والمنطقة</h3>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">لغة الواجهة</label>
+                                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                                <option value="ar" selected>العربية</option>
+                                                <option value="en">English</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">المنطقة الزمنية</label>
+                                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                                <option value="asia/riyadh" selected>توقيت الرياض (GMT+3)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Email Preferences -->
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">تفضيلات البريد الإلكتروني</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">الوظائف الجديدة</h4>
+                                                <p class="text-sm text-gray-600">تلقي إشعارات عن الوظائف التي تناسب تخصصك</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">التحديثات الأسبوعية</h4>
+                                                <p class="text-sm text-gray-600">ملخص أسبوعي لأحدث الفرص والأخبار</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Account Security -->
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">أمان الحساب</h3>
+                                    <div class="space-y-4">
+                                        <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-medium text-gray-900">تغيير كلمة المرور</h4>
+                                                    <p class="text-sm text-gray-600">آخر تحديث منذ 3 أشهر</p>
+                                                </div>
+                                                <span class="text-blue-600">تعديل</span>
+                                            </div>
+                                        </button>
+                                        <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <h4 class="font-medium text-gray-900">التحقق بخطوتين</h4>
+                                                    <p class="text-sm text-gray-600">غير مفعل</p>
+                                                </div>
+                                                <span class="text-blue-600">تفعيل</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Tab -->
+                        <div id="notifications-tab" class="tab-content hidden">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-6">إعدادات الإشعارات</h2>
+
+                            <div class="space-y-6">
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">إشعارات الوظائف</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">وظائف جديدة تناسب تخصصي</h4>
+                                                <p class="text-sm text-gray-600">تلقي إشعارات فورية عند نشر وظائف مناسبة</p>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">إيميل</label>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">موقع</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">تحديثات الطلبات</h4>
+                                                <p class="text-sm text-gray-600">إشعارات حول حالة طلبات التوظيف المقدمة</p>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">إيميل</label>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">موقع</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">دعوات المقابلات</h4>
+                                                <p class="text-sm text-gray-600">إشعارات عند تلقي دعوات لإجراء مقابلات</p>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">إيميل</label>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">موقع</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">رسائل من أصحاب العمل</h4>
+                                                <p class="text-sm text-gray-600">تلقي رسائل مباشرة من المؤسسات الصحية</p>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">إيميل</label>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                                    <label class="text-sm text-gray-700">موقع</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">إشعارات عامة</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">أخبار المنصة</h4>
+                                                <p class="text-sm text-gray-600">تحديثات حول ميزات جديدة وتحسينات</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">نصائح مهنية</h4>
+                                                <p class="text-sm text-gray-600">نصائح لتطوير المهارات وتحسين الملف الشخصي</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-3">
+                                            <div class="flex-1">
+                                                <h4 class="font-medium text-gray-900">فعاليات وورش عمل</h4>
+                                                <p class="text-sm text-gray-600">دعوات لحضور فعاليات التطوير المهني</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Tab -->
+                        <div id="privacy-tab" class="tab-content hidden">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-6">الخصوصية والأمان</h2>
+
+                            <div class="space-y-6">
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">إعدادات الملف الشخصي</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">إظهار الملف الشخصي لأصحاب العمل</h4>
+                                                <p class="text-sm text-gray-600">السماح للمؤسسات الصحية بمشاهدة ملفك الشخصي</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">إظهار معلومات الاتصال</h4>
+                                                <p class="text-sm text-gray-600">عرض رقم الهاتف والبريد الإلكتروني في الملف العام</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">إدارة البيانات</h3>
+                                    <div class="space-y-4">
+                                        <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                            <h4 class="font-medium text-gray-900">تحميل بياناتي</h4>
+                                            <p class="text-sm text-gray-600">احصل على نسخة من جميع بياناتك المحفوظة</p>
+                                        </button>
+                                        <button class="w-full text-left px-4 py-3 border border-red-300 text-red-700 rounded-lg hover:bg-red-50 transition-colors">
+                                            <h4 class="font-medium">حذف الحساب</h4>
+                                            <p class="text-sm text-red-600">حذف نهائي للحساب وجميع البيانات المرتبطة به</p>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="p-6 border border-gray-200 rounded-lg">
+                                    <h3 class="text-lg font-medium text-gray-900 mb-4">المشاركة والتتبع</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">تتبع الأنشطة</h4>
+                                                <p class="text-sm text-gray-600">السماح بتتبع سلوك التصفح لتحسين التوصيات</p>
+                                            </div>
+                                            <input type="checkbox" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">مشاركة الإحصائيات</h4>
+                                                <p class="text-sm text-gray-600">المساهمة في إحصائيات سوق العمل الطبي</p>
+                                            </div>
+                                            <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Save Button -->
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <button id="saveSettings" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                حفظ التغييرات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

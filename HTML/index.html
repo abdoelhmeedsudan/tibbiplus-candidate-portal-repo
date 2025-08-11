@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة التوظيف الصحي - المملكة العربية السعودية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="md:hidden py-4 border-t border-gray-200 hidden">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">اتصل بنا</a>
+                    <a href="dashboard.html" class="px-3 py-2 rounded-md text-sm font-medium text-green-600 bg-green-50 sm:hidden">لوحة الموظفين</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+                            مستقبلك المهني
+                            <span class="block text-green-400">في القطاع الصحي</span>
+                        </h1>
+                        <p class="text-xl text-blue-100 leading-relaxed">
+                            اكتشف أفضل الفرص الوظيفية في المجال الصحي بالمملكة العربية السعودية. نربطك بأرقى المؤسسات الصحية والعيادات المتخصصة.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="jobs.html" class="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-search ml-2"></i>
+                            ابحث عن وظيفة
+                        </a>
+                        <a href="register.html" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                            سجل الآن
+                            <i class="fas fa-chevron-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <h3 class="text-2xl font-bold mb-6 text-center">بحث سريع</h3>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="التخصص أو المسمى الوظيفي" class="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <select class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option>اختر المدينة</option>
+                                <option>الرياض</option>
+                                <option>جدة</option>
+                                <option>الدمام</option>
+                                <option>مكة المكرمة</option>
+                            </select>
+                            <button class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-semibold">
+                                بحث
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Statistics -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                        <div class="text-3xl font-bold text-gray-900" data-count="2847">0</div>
+                        <div class="text-gray-600 font-medium">وظيفة متاحة</div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <i class="fas fa-users text-4xl text-green-600 mb-4"></i>
+                        <div class="text-3xl font-bold text-gray-900" data-count="15632">0</div>
+                        <div class="text-gray-600 font-medium">مرشح مسجل</div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <i class="fas fa-building text-4xl text-purple-600 mb-4"></i>
+                        <div class="text-3xl font-bold text-gray-900" data-count="524">0</div>
+                        <div class="text-gray-600 font-medium">جهة توظيف</div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <i class="fas fa-award text-4xl text-orange-600 mb-4"></i>
+                        <div class="text-3xl font-bold text-gray-900" data-count="8934">0</div>
+                        <div class="text-gray-600 font-medium">توظيف ناجح</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">لماذا تختار منصتنا؟</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    نقدم حلولاً متكاملة للباحثين عن العمل وأصحاب العمل في القطاع الصحي
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-blue-100 mb-4">
+                        <i class="fas fa-search text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">بحث متقدم</h3>
+                    <p class="text-gray-600 leading-relaxed">أدوات بحث قوية تساعدك في العثور على الوظيفة المثالية حسب التخصص والموقع والخبرة.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-green-100 mb-4">
+                        <i class="fas fa-user-md text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">ملف شخصي شامل</h3>
+                    <p class="text-gray-600 leading-relaxed">أنشئ ملفاً شخصياً احترافياً يسلط الضوء على مهاراتك وخبراتك في المجال الطبي.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-purple-100 mb-4">
+                        <i class="fas fa-hospital text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">دليل العيادات</h3>
+                    <p class="text-gray-600 leading-relaxed">دليل شامل للمؤسسات الصحية والعيادات في جميع أنحاء المملكة مع معلومات التواصل.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-orange-100 mb-4">
+                        <i class="fas fa-bell text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">إشعارات فورية</h3>
+                    <p class="text-gray-600 leading-relaxed">احصل على إشعارات فورية بالوظائف الجديدة التي تناسب تخصصك ومؤهلاتك.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-indigo-100 mb-4">
+                        <i class="fas fa-headset text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">دعم متخصص</h3>
+                    <p class="text-gray-600 leading-relaxed">فريق دعم متخصص في التوظيف الطبي لمساعدتك في كل خطوة من رحلتك المهنية.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <div class="inline-flex p-3 rounded-lg bg-red-100 mb-4">
+                        <i class="fas fa-video text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">مقابلات عبر الإنترنت</h3>
+                    <p class="text-gray-600 leading-relaxed">إمكانية إجراء المقابلات الأولية عبر الإنترنت لتوفير الوقت والجهد.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">آخر الأخبار والتحديثات</h2>
+                <p class="text-lg text-gray-600">ابق على اطلاع بأحدث تطورات سوق العمل في القطاع الصحي</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://images.pexels.com/photos/4270371/pexels-photo-4270371.jpeg?auto=compress&cs=tinysrgb&w=400" alt="وزارة الصحة" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar ml-1"></i>
+                            15 يناير 2025
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                            وزارة الصحة تعلن عن 500 وظيفة جديدة
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">فرص عمل متنوعة للأطباء والممرضين في مختلف التخصصات</p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg?auto=compress&cs=tinysrgb&w=400" alt="برنامج تدريبي" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar ml-1"></i>
+                            12 يناير 2025
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                            برنامج تدريبي جديد للممرضين الخريجين
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">برنامج تطوير مهني شامل بالتعاون مع أفضل المستشفيات</p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مجمع طبي" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <i class="fas fa-calendar ml-1"></i>
+                            10 يناير 2025
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                            افتتاح مجمع طبي جديد في الرياض
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">مجمع طبي متطور يوفر 200 فرصة عمل في التخصصات المختلفة</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-green-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">ابدأ رحلتك المهنية اليوم</h2>
+            <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                انضم إلى آلاف المهنيين الذين وجدوا وظائفهم المثالية من خلال منصتنا
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="register.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg">
+                    إنشاء حساب جديد
+                    <i class="fas fa-chevron-left mr-2"></i>
+                </a>
+                <a href="jobs.html" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/20">
+                    <i class="fas fa-search ml-2"></i>
+                    تصفح الوظائف
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

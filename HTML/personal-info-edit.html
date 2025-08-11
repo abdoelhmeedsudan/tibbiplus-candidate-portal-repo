@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل الملف الشخصي - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <div class="flex items-center space-x-4 mb-4">
+                    <a href="personal-info.html" class="text-blue-600 hover:text-blue-700 transition-colors">
+                        <i class="fas fa-arrow-right text-lg"></i>
+                    </a>
+                    <h1 class="text-3xl font-bold text-gray-900">تعديل الملف الشخصي</h1>
+                </div>
+                <p class="text-gray-600">قم بتحديث معلوماتك الشخصية والمهنية</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Sidebar Navigation -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow-md p-6 sticky top-24">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">أقسام الملف</h3>
+                        <nav class="space-y-2">
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors bg-blue-50 text-blue-600 border border-blue-200" data-tab="basic">
+                                <i class="fas fa-user ml-2"></i>
+                                المعلومات الأساسية
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="professional">
+                                <i class="fas fa-briefcase ml-2"></i>
+                                المعلومات المهنية
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="education">
+                                <i class="fas fa-graduation-cap ml-2"></i>
+                                التعليم
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="experience">
+                                <i class="fas fa-building ml-2"></i>
+                                الخبرة العملية
+                            </button>
+                            <button class="tab-btn w-full text-right px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50" data-tab="skills">
+                                <i class="fas fa-star ml-2"></i>
+                                المهارات
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main Form -->
+                <div class="lg:col-span-3">
+                    <form id="personalInfoForm" class="space-y-8">
+                        <!-- Basic Information Tab -->
+                        <div id="basic-tab" class="tab-content bg-white rounded-xl shadow-md p-8">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-6">المعلومات الأساسية</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">الاسم الأول بالإنجليزية *</label>
+                                    <input type="text" name="firstNameEn" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="Ahmed">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">اسم العائلة بالإنجليزية *</label>
+                                    <input type="text" name="lastNameEn" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="Al-Ahmad">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ الميلاد *</label>
+                                    <input type="date" name="birthDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="1985-01-15">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">الجنس *</label>
+                                    <select name="genderId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر الجنس</option>
+                                        <option value="male" selected>ذكر</option>
+                                        <option value="female">أنثى</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">الجنسية *</label>
+                                    <select name="nationalityId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر الجنسية</option>
+                                        <option value="saudi" selected>سعودي</option>
+                                        <option value="egyptian">مصري</option>
+                                        <option value="jordanian">أردني</option>
+                                        <option value="lebanese">لبناني</option>
+                                        <option value="syrian">سوري</option>
+                                        <option value="palestinian">فلسطيني</option>
+                                        <option value="iraqi">عراقي</option>
+                                        <option value="yemeni">يمني</option>
+                                        <option value="kuwaiti">كويتي</option>
+                                        <option value="emirati">إماراتي</option>
+                                        <option value="qatari">قطري</option>
+                                        <option value="bahraini">بحريني</option>
+                                        <option value="omani">عماني</option>
+                                        <option value="moroccan">مغربي</option>
+                                        <option value="algerian">جزائري</option>
+                                        <option value="tunisian">تونسي</option>
+                                        <option value="libyan">ليبي</option>
+                                        <option value="sudanese">سوداني</option>
+                                        <option value="indian">هندي</option>
+                                        <option value="pakistani">باكستاني</option>
+                                        <option value="bangladeshi">بنغلاديشي</option>
+                                        <option value="filipino">فلبيني</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">رقم الهوية *</label>
+                                    <input type="text" name="idNumber" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="1234567890">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">رقم جواز السفر</label>
+                                    <input type="text" name="passportNumber" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ انتهاء جواز السفر</label>
+                                    <input type="date" name="passportExpiry" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">الحالة الاجتماعية *</label>
+                                    <select name="maritalStatusId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر الحالة الاجتماعية</option>
+                                        <option value="single">أعزب</option>
+                                        <option value="married" selected>متزوج</option>
+                                        <option value="divorced">مطلق</option>
+                                        <option value="widowed">أرمل</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">رقم الجوال *</label>
+                                    <input type="tel" name="mobile" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="+966501234567">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">البريد الإلكتروني *</label>
+                                    <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="ahmed@example.com">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">المدينة *</label>
+                                    <select name="cityId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر المدينة</option>
+                                        <option value="riyadh" selected>الرياض</option>
+                                        <option value="jeddah">جدة</option>
+                                        <option value="dammam">الدمام</option>
+                                        <option value="mecca">مكة المكرمة</option>
+                                        <option value="medina">المدينة المنورة</option>
+                                        <option value="taif">الطائف</option>
+                                        <option value="tabuk">تبوك</option>
+                                        <option value="buraidah">بريدة</option>
+                                        <option value="khamis-mushait">خميس مشيط</option>
+                                        <option value="hail">حائل</option>
+                                        <option value="najran">نجران</option>
+                                        <option value="jazan">جازان</option>
+                                        <option value="yanbu">ينبع</option>
+                                        <option value="jubail">الجبيل</option>
+                                        <option value="abha">أبها</option>
+                                        <option value="qatif">القطيف</option>
+                                        <option value="sakaka">سكاكا</option>
+                                        <option value="arar">عرعر</option>
+                                        <option value="al-bahah">الباحة</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">رمز الدولة</label>
+                                    <input type="text" name="countryCode" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="SA">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Information Tab -->
+                        <div id="professional-tab" class="tab-content bg-white rounded-xl shadow-md p-8 hidden">
+                            <h2 class="text-2xl font-semibold text-gray-900 mb-6">المعلومات المهنية</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">المسمى الوظيفي *</label>
+                                    <select name="jobTitleId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر المسمى الوظيفي</option>
+                                        <option value="general-practitioner">طبيب عام</option>
+                                        <option value="internal-medicine" selected>طبيب باطني</option>
+                                        <option value="pediatrician">طبيب أطفال</option>
+                                        <option value="surgeon">جراح</option>
+                                        <option value="cardiologist">طبيب قلب</option>
+                                        <option value="neurologist">طبيب أعصاب</option>
+                                        <option value="orthopedic">طبيب عظام</option>
+                                        <option value="dermatologist">طبيب جلدية</option>
+                                        <option value="ophthalmologist">طبيب عيون</option>
+                                        <option value="ent">طبيب أنف وأذن وحنجرة</option>
+                                        <option value="gynecologist">طبيب نساء وولادة</option>
+                                        <option value="urologist">طبيب مسالك بولية</option>
+                                        <option value="psychiatrist">طبيب نفسي</option>
+                                        <option value="radiologist">طبيب أشعة</option>
+                                        <option value="anesthesiologist">طبيب تخدير</option>
+                                        <option value="pathologist">طبيب تشريح مرضي</option>
+                                        <option value="emergency-physician">طبيب طوارئ</option>
+                                        <option value="family-medicine">طبيب أسرة</option>
+                                        <option value="nurse">ممرض/ممرضة</option>
+                                        <option value="pharmacist">صيدلي</option>
+                                        <option value="physiotherapist">أخصائي علاج طبيعي</option>
+                                        <option value="lab-technician">فني مختبر</option>
+                                        <option value="radiology-technician">فني أشعة</option>
+                                        <option value="dentist">طبيب أسنان</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">التخصص الرئيسي *</label>
+                                    <select name="specializationId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر التخصص</option>
+                                        <option value="internal-medicine" selected>الطب الباطني</option>
+                                        <option value="pediatrics">طب الأطفال</option>
+                                        <option value="surgery">الجراحة</option>
+                                        <option value="cardiology">أمراض القلب</option>
+                                        <option value="neurology">طب الأعصاب</option>
+                                        <option value="orthopedics">جراحة العظام</option>
+                                        <option value="dermatology">الأمراض الجلدية</option>
+                                        <option value="ophthalmology">طب العيون</option>
+                                        <option value="ent">الأنف والأذن والحنجرة</option>
+                                        <option value="obstetrics-gynecology">النساء والولادة</option>
+                                        <option value="urology">المسالك البولية</option>
+                                        <option value="psychiatry">الطب النفسي</option>
+                                        <option value="radiology">الأشعة التشخيصية</option>
+                                        <option value="anesthesiology">التخدير</option>
+                                        <option value="pathology">التشريح المرضي</option>
+                                        <option value="emergency-medicine">طب الطوارئ</option>
+                                        <option value="family-medicine">طب الأسرة</option>
+                                        <option value="nursing">التمريض</option>
+                                        <option value="pharmacy">الصيدلة</option>
+                                        <option value="physiotherapy">العلاج الطبيعي</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">التخصص الفرعي</label>
+                                    <select name="subSpecializationId" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر التخصص الفرعي</option>
+                                        <option value="cardiology" selected>أمراض القلب</option>
+                                        <option value="gastroenterology">أمراض الجهاز الهضمي</option>
+                                        <option value="endocrinology">الغدد الصماء</option>
+                                        <option value="nephrology">أمراض الكلى</option>
+                                        <option value="pulmonology">أمراض الصدر</option>
+                                        <option value="rheumatology">أمراض الروماتيزم</option>
+                                        <option value="hematology">أمراض الدم</option>
+                                        <option value="oncology">الأورام</option>
+                                        <option value="infectious-diseases">الأمراض المعدية</option>
+                                        <option value="geriatrics">طب المسنين</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">المجلس الطبي *</label>
+                                    <select name="medicalCouncilId" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">اختر المجلس الطبي</option>
+                                        <option value="scfhs" selected>الهيئة السعودية للتخصصات الصحية</option>
+                                        <option value="saudi-medical-council">المجلس الطبي السعودي</option>
+                                        <option value="arab-board">المجلس العربي للتخصصات الطبية</option>
+                                        <option value="american-board">المجلس الأمريكي</option>
+                                        <option value="british-board">المجلس البريطاني</option>
+                                        <option value="canadian-board">المجلس الكندي</option>
+                                        <option value="australian-board">المجلس الأسترالي</option>
+                                        <option value="german-board">المجلس الألماني</option>
+                                        <option value="french-board">المجلس الفرنسي</option>
+                                        <option value="egyptian-board">المجلس المصري</option>
+                                        <option value="jordanian-board">المجلس الأردني</option>
+                                        <option value="lebanese-board">المجلس اللبناني</option>
+                                        <option value="indian-board">المجلس الهندي</option>
+                                        <option value="pakistani-board">المجلس الباكستاني</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">رقم التسجيل *</label>
+                                    <input type="text" name="medicalCouncilNumber" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="MC123456">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ التسجيل *</label>
+                                    <input type="date" name="medicalCouncilRegistrationDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2020-03-10">
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">الملخص المهني (بالإنجليزية)</label>
+                                <textarea name="summaryEn" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Professional summary in English">Internal medicine specialist with expertise in cardiology, over 8 years of experience in diagnosing and treating cardiovascular diseases. Board certified in internal medicine with fellowship in cardiology from King Saud University.</textarea>
+                            </div>
+
+                            <div class="mt-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">التفضيلات المهنية (بالإنجليزية)</label>
+                                <textarea name="preferencesEn" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Professional preferences in English">Looking for opportunities in specialized hospitals or large medical complexes that provide advanced work environment and continuous professional development opportunities. Prefer working in multidisciplinary teams with research participation possibilities.</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Education Tab -->
+                        <div id="education-tab" class="tab-content bg-white rounded-xl shadow-md p-8 hidden">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-semibold text-gray-900">التعليم والمؤهلات</h2>
+                                <button type="button" id="addEducation" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-plus text-sm"></i>
+                                    <span>إضافة مؤهل</span>
+                                </button>
+                            </div>
+
+                            <div id="educationList" class="space-y-6">
+                                <!-- Education Entry 1 -->
+                                <div class="education-entry border border-gray-200 rounded-lg p-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-gray-900">المؤهل #1</h3>
+                                        <button type="button" class="remove-education text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم المؤسسة (عربي)</label>
+                                            <input type="text" name="educations[0][institutionAr]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="جامعة الملك سعود - كلية الطب">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم المؤسسة (إنجليزي)</label>
+                                            <input type="text" name="educations[0][institutionEn]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="King Saud University - College of Medicine">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">الدرجة العلمية (عربي)</label>
+                                            <input type="text" name="educations[0][degreeAr]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="بكالوريوس الطب والجراحة">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">الدرجة العلمية (إنجليزي)</label>
+                                            <input type="text" name="educations[0][degreeEn]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="Bachelor of Medicine and Surgery">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ البداية</label>
+                                            <input type="date" name="educations[0][startDate]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2003-09-01">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ النهاية</label>
+                                            <input type="date" name="educations[0][endDate]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2009-06-30">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">ملاحظات (عربي)</label>
+                                            <textarea name="educations[0][notesAr]" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">تخرجت بتقدير امتياز مع مرتبة الشرف الأولى</textarea>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">ملاحظات (إنجليزي)</label>
+                                            <textarea name="educations[0][notesEn]" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">Graduated with distinction and first class honors</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Tab -->
+                        <div id="experience-tab" class="tab-content bg-white rounded-xl shadow-md p-8 hidden">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-semibold text-gray-900">الخبرة العملية</h2>
+                                <button type="button" id="addExperience" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-plus text-sm"></i>
+                                    <span>إضافة خبرة</span>
+                                </button>
+                            </div>
+
+                            <div id="experienceList" class="space-y-6">
+                                <!-- Experience Entry 1 -->
+                                <div class="experience-entry border border-gray-200 rounded-lg p-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-gray-900">الخبرة #1</h3>
+                                        <button type="button" class="remove-experience text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم الشركة (عربي)</label>
+                                            <input type="text" name="experiences[0][companyAr]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="مستشفى الملك فهد الطبي">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم الشركة (إنجليزي)</label>
+                                            <input type="text" name="experiences[0][companyEn]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="King Fahd Medical City">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">المسمى الوظيفي</label>
+                                            <select name="experiences[0][jobTitleId]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                                <option value="">اختر المسمى الوظيفي</option>
+                                                <option value="consultant" selected>استشاري</option>
+                                                <option value="specialist">أخصائي</option>
+                                                <option value="resident">مقيم</option>
+                                                <option value="intern">طبيب امتياز</option>
+                                                <option value="senior-nurse">ممرض أول</option>
+                                                <option value="nurse">ممرض</option>
+                                                <option value="pharmacist">صيدلي</option>
+                                                <option value="technician">فني</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ البداية</label>
+                                            <input type="date" name="experiences[0][startDate]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2018-01-01">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">تاريخ النهاية</label>
+                                            <input type="date" name="experiences[0][endDate]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">المسؤوليات (عربي)</label>
+                                            <textarea name="experiences[0][responsibilitiesAr]" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">تشخيص وعلاج أمراض القلب والأوعية الدموية، إجراء قسطرة القلب التشخيصية والعلاجية، الإشراف على الأطباء المقيمين، المشاركة في الأبحاث الطبية</textarea>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">المسؤوليات (إنجليزي)</label>
+                                            <textarea name="experiences[0][responsibilitiesEn]" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">Diagnosis and treatment of cardiovascular diseases, performing diagnostic and therapeutic cardiac catheterization, supervising resident physicians, participating in medical research</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skills Tab -->
+                        <div id="skills-tab" class="tab-content bg-white rounded-xl shadow-md p-8 hidden">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-semibold text-gray-900">المهارات والكفاءات</h2>
+                                <button type="button" id="addSkill" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-plus text-sm"></i>
+                                    <span>إضافة مهارة</span>
+                                </button>
+                            </div>
+
+                            <div id="skillsList" class="space-y-6">
+                                <!-- Skill Entry 1 -->
+                                <div class="skill-entry border border-gray-200 rounded-lg p-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-lg font-semibold text-gray-900">المهارة #1</h3>
+                                        <button type="button" class="remove-skill text-red-600 hover:text-red-700">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم المهارة (عربي)</label>
+                                            <input type="text" name="skills[0][skillNameAr]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="تشخيص أمراض القلب">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">اسم المهارة (إنجليزي)</label>
+                                            <input type="text" name="skills[0][skillNameEn]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="Cardiac Diagnosis">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">مستوى الإتقان (عربي)</label>
+                                            <select name="skills[0][proficiencyLevelAr]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                                <option value="">اختر المستوى</option>
+                                                <option value="مبتدئ">مبتدئ</option>
+                                                <option value="متوسط">متوسط</option>
+                                                <option value="متقدم">متقدم</option>
+                                                <option value="خبير" selected>خبير</option>
+                                                <option value="متخصص">متخصص</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">مستوى الإتقان (إنجليزي)</label>
+                                            <select name="skills[0][proficiencyLevelEn]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                                <option value="">Select Level</option>
+                                                <option value="Beginner">Beginner</option>
+                                                <option value="Intermediate">Intermediate</option>
+                                                <option value="Advanced">Advanced</option>
+                                                <option value="Expert" selected>Expert</option>
+                                                <option value="Specialist">Specialist</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">سنوات الخبرة</label>
+                                            <input type="number" name="skills[0][yearsOfExperience]" min="0" max="50" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="8">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+                            <a href="personal-info.html" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                إلغاء
+                            </a>
+                            <button type="submit" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                حفظ التغييرات
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="personal-info-edit.js"></script>
+</body>
+</html>

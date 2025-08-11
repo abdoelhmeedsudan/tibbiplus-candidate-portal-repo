@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل العيادات والمستشفيات - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">دليل العيادات والمستشفيات</h1>
+                <p class="text-gray-600">اكتشف أفضل المؤسسات الصحية في المملكة العربية السعودية</p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Search Bar -->
+                    <div class="md:col-span-1">
+                        <div class="relative">
+                            <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                            <input type="text" id="searchInput" placeholder="ابحث عن عيادة أو مستشفى..." class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <!-- City Filter -->
+                    <div>
+                        <select id="cityFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">جميع المدن</option>
+                            <option value="الرياض">الرياض</option>
+                            <option value="جدة">جدة</option>
+                            <option value="الدمام">الدمام</option>
+                            <option value="مكة المكرمة">مكة المكرمة</option>
+                        </select>
+                    </div>
+
+                    <!-- Specialty Filter -->
+                    <div>
+                        <select id="specialtyFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">جميع التخصصات</option>
+                            <option value="مستشفى متخصص">مستشفى متخصص</option>
+                            <option value="مجمع طبي">مجمع طبي</option>
+                            <option value="عيادات متخصصة">عيادات متخصصة</option>
+                            <option value="مستشفى عام">مستشفى عام</option>
+                        </select>
+                    </div>
+
+                    <!-- View Toggle -->
+                    <div class="flex items-center space-x-2">
+                        <button id="gridView" class="p-2 rounded-lg transition-colors bg-blue-100 text-blue-600">
+                            <i class="fas fa-th text-lg"></i>
+                        </button>
+                        <button id="listView" class="p-2 rounded-lg transition-colors text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-list text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="mb-6">
+                <p class="text-gray-600">
+                    تم العثور على <span class="font-semibold text-gray-900" id="resultsCount">4</span> مؤسسة صحية
+                </p>
+            </div>
+
+            <!-- Clinics Grid/List -->
+            <div id="clinicsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Clinic 1 -->
+                <div class="clinic-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden" data-city="الرياض" data-specialty="مستشفى متخصص">
+                    <div>
+                        <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مستشفى الملك فيصل التخصصي" class="w-full h-48 object-cover">
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-1">مستشفى الملك فيصل التخصصي</h3>
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                                    مستشفى متخصص
+                                </span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium text-gray-900">4.8</span>
+                                <span class="text-sm text-gray-500">(1247)</span>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">مستشفى رائد في تقديم الرعاية الصحية المتخصصة والأبحاث الطبية</p>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt ml-2 text-gray-400"></i>
+                                <span>حي النخيل، الرياض 12211</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone ml-2 text-gray-400"></i>
+                                <span>+966 11 464 7272</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock ml-2 text-gray-400"></i>
+                                <span>24 ساعة</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">الخدمات المتوفرة:</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">طب القلب</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الأورام</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">زراعة الأعضاء</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">+1 المزيد</span>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                                عرض التفاصيل
+                            </button>
+                            <button class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                الاتجاهات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinic 2 -->
+                <div class="clinic-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden" data-city="جدة" data-specialty="مجمع طبي">
+                    <div>
+                        <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مجمع السعودي الطبي" class="w-full h-48 object-cover">
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-1">مجمع السعودي الطبي</h3>
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
+                                    مجمع طبي
+                                </span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium text-gray-900">4.6</span>
+                                <span class="text-sm text-gray-500">(892)</span>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">مجمع طبي شامل يقدم خدمات متنوعة بأحدث التقنيات الطبية</p>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt ml-2 text-gray-400"></i>
+                                <span>شارع الأمير سلطان، جدة 23433</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone ml-2 text-gray-400"></i>
+                                <span>+966 12 659 9999</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock ml-2 text-gray-400"></i>
+                                <span>السبت - الخميس: 8:00 - 22:00</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">الخدمات المتوفرة:</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">طب الأسنان</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الجلدية</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">العظام</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">+1 المزيد</span>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                                عرض التفاصيل
+                            </button>
+                            <button class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                الاتجاهات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinic 3 -->
+                <div class="clinic-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden" data-city="الرياض" data-specialty="عيادات متخصصة">
+                    <div>
+                        <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=400" alt="عيادات الدكتور سليمان الحبيب" class="w-full h-48 object-cover">
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-1">عيادات الدكتور سليمان الحبيب</h3>
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">
+                                    عيادات متخصصة
+                                </span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium text-gray-900">4.7</span>
+                                <span class="text-sm text-gray-500">(654)</span>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">شبكة من العيادات المتخصصة تقدم رعاية طبية عالية الجودة</p>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt ml-2 text-gray-400"></i>
+                                <span>طريق الملك فهد، الرياض 11564</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone ml-2 text-gray-400"></i>
+                                <span>+966 11 525 2525</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock ml-2 text-gray-400"></i>
+                                <span>السبت - الخميس: 8:00 - 24:00</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">الخدمات المتوفرة:</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الباطنة</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الجراحة</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">المسالك البولية</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">+1 المزيد</span>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                                عرض التفاصيل
+                            </button>
+                            <button class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                الاتجاهات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinic 4 -->
+                <div class="clinic-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden" data-city="الدمام" data-specialty="مستشفى عام">
+                    <div>
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مستشفى المملكة" class="w-full h-48 object-cover">
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-1">مستشفى المملكة</h3>
+                                <span class="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">
+                                    مستشفى عام
+                                </span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium text-gray-900">4.4</span>
+                                <span class="text-sm text-gray-500">(423)</span>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">مستشفى عام يوفر خدمات طبية شاملة على مدار الساعة</p>
+
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt ml-2 text-gray-400"></i>
+                                <span>الكورنيش الشرقي، الدمام 32245</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-phone ml-2 text-gray-400"></i>
+                                <span>+966 13 844 4444</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock ml-2 text-gray-400"></i>
+                                <span>24 ساعة</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">الخدمات المتوفرة:</h4>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الطوارئ</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">العناية المركزة</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">الأشعة</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">+1 المزيد</span>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                                عرض التفاصيل
+                            </button>
+                            <button class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                الاتجاهات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map View Toggle -->
+            <div class="mt-12">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">عرض الخريطة</h3>
+                        <p class="text-gray-600 mb-6">اعرض مواقع جميع المؤسسات الصحية على الخريطة التفاعلية</p>
+                        <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-marker-alt text-6xl text-gray-400 mb-4"></i>
+                                <h3 class="text-lg font-semibold text-gray-700 mb-2">خريطة تفاعلية</h3>
+                                <p class="text-gray-500">سيتم تحميل الخريطة هنا</p>
+                                <p class="text-sm text-gray-400 mt-2">يتطلب تكامل مع خدمة الخرائط</p>
+                            </div>
+                        </div>
+                        <button class="mt-4 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
+                            عرض الخريطة التفاعلية
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="clinics.js"></script>
+</body>
+</html>

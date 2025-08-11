@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - منصة التوظيف الصحي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-xs text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الرئيسية</a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium">EN</span>
+                    </button>
+                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-building text-sm"></i>
+                        <span>للموظفين</span>
+                    </a>
+                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                        <i class="fas fa-user text-sm"></i>
+                        <span class="hidden sm:inline">حسابي</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen bg-gray-50 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">الملف الشخصي</h1>
+                <p class="text-gray-600">عرض وإدارة معلوماتك الشخصية والمهنية</p>
+            </div>
+
+            <!-- Profile Completion -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">اكتمال الملف الشخصي</h3>
+                    <span class="text-2xl font-bold text-blue-600">87%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                    <div class="bg-blue-600 h-3 rounded-full" style="width: 87%"></div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <p class="text-sm text-gray-600">أكمل ملفك الشخصي للحصول على فرص أفضل</p>
+                    <a href="personal-info-edit.html" class="text-blue-600 hover:text-blue-700 text-sm font-medium">إكمال الملف</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Profile Info -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Basic Information -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-semibold text-gray-900">المعلومات الأساسية</h2>
+                            <a href="personal-info-edit.html" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-edit text-sm"></i>
+                                <span>تعديل</span>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">الاسم بالإنجليزية</label>
+                                <p class="text-lg font-medium text-gray-900">Ahmed Al-Ahmad</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">تاريخ الميلاد</label>
+                                <p class="text-lg font-medium text-gray-900">15 يناير 1985</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">الجنس</label>
+                                <p class="text-lg font-medium text-gray-900">ذكر</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">الجنسية</label>
+                                <p class="text-lg font-medium text-gray-900">سعودي</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">رقم الهوية</label>
+                                <p class="text-lg font-medium text-gray-900">1234567890</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">الحالة الاجتماعية</label>
+                                <p class="text-lg font-medium text-gray-900">متزوج</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">رقم الجوال</label>
+                                <p class="text-lg font-medium text-gray-900">+966501234567</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">البريد الإلكتروني</label>
+                                <p class="text-lg font-medium text-gray-900">ahmed@example.com</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">المدينة</label>
+                                <p class="text-lg font-medium text-gray-900">الرياض</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Information -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">المعلومات المهنية</h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">المسمى الوظيفي</label>
+                                <p class="text-lg font-medium text-gray-900">طبيب باطني</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">التخصص الرئيسي</label>
+                                <p class="text-lg font-medium text-gray-900">الطب الباطني</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">التخصص الفرعي</label>
+                                <p class="text-lg font-medium text-gray-900">أمراض القلب</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">المجلس الطبي</label>
+                                <p class="text-lg font-medium text-gray-900">الهيئة السعودية للتخصصات الصحية</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">رقم التسجيل</label>
+                                <p class="text-lg font-medium text-gray-900">MC123456</p>
+                            </div>
+
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <label class="block text-sm font-medium text-gray-600 mb-1">تاريخ التسجيل</label>
+                                <p class="text-lg font-medium text-gray-900">10 مارس 2020</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-600 mb-2">الملخص المهني</label>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 leading-relaxed">
+                                    طبيب باطني متخصص في أمراض القلب مع خبرة تزيد عن 8 سنوات في تشخيص وعلاج أمراض القلب والأوعية الدموية. 
+                                    حاصل على شهادة البورد السعودي في الطب الباطني وزمالة في أمراض القلب من جامعة الملك سعود.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-600 mb-2">التفضيلات المهنية</label>
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 leading-relaxed">
+                                    أبحث عن فرصة عمل في مستشفى متخصص أو مجمع طبي كبير يوفر بيئة عمل متطورة وفرص للتطوير المهني المستمر. 
+                                    أفضل العمل في فريق متعدد التخصصات مع إمكانية المشاركة في الأبحاث الطبية.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">التعليم والمؤهلات</h2>
+
+                        <div class="space-y-6">
+                            <div class="border-r-4 border-blue-500 pr-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">بكالوريوس الطب والجراحة</h3>
+                                    <span class="text-sm text-gray-500">2003 - 2009</span>
+                                </div>
+                                <p class="text-blue-600 font-medium mb-2">جامعة الملك سعود - كلية الطب</p>
+                                <p class="text-gray-600 text-sm">تخرجت بتقدير امتياز مع مرتبة الشرف الأولى</p>
+                            </div>
+
+                            <div class="border-r-4 border-green-500 pr-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">البورد السعودي - الطب الباطني</h3>
+                                    <span class="text-sm text-gray-500">2010 - 2014</span>
+                                </div>
+                                <p class="text-green-600 font-medium mb-2">الهيئة السعودية للتخصصات الصحية</p>
+                                <p class="text-gray-600 text-sm">برنامج الإقامة في الطب الباطني</p>
+                            </div>
+
+                            <div class="border-r-4 border-purple-500 pr-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">زمالة أمراض القلب</h3>
+                                    <span class="text-sm text-gray-500">2015 - 2017</span>
+                                </div>
+                                <p class="text-purple-600 font-medium mb-2">مستشفى الملك فيصل التخصصي</p>
+                                <p class="text-gray-600 text-sm">زمالة متقدمة في تشخيص وعلاج أمراض القلب</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">الخبرة العملية</h2>
+
+                        <div class="space-y-6">
+                            <div class="border-r-4 border-blue-500 pr-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">استشاري أمراض القلب</h3>
+                                    <span class="text-sm text-gray-500">2018 - الحالي</span>
+                                </div>
+                                <p class="text-blue-600 font-medium mb-2">مستشفى الملك فهد الطبي</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• تشخيص وعلاج أمراض القلب والأوعية الدموية</li>
+                                    <li>• إجراء قسطرة القلب التشخيصية والعلاجية</li>
+                                    <li>• الإشراف على الأطباء المقيمين</li>
+                                    <li>• المشاركة في الأبحاث الطبية</li>
+                                </ul>
+                            </div>
+
+                            <div class="border-r-4 border-green-500 pr-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">طبيب أخصائي باطني</h3>
+                                    <span class="text-sm text-gray-500">2014 - 2018</span>
+                                </div>
+                                <p class="text-green-600 font-medium mb-2">مستشفى المملكة</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• تقديم الرعاية الطبية للمرضى الداخليين والخارجيين</li>
+                                    <li>• إدارة الحالات المعقدة والمزمنة</li>
+                                    <li>• التعاون مع الفريق الطبي متعدد التخصصات</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="bg-white rounded-xl shadow-md p-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">المهارات والكفاءات</h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">تشخيص أمراض القلب</span>
+                                        <span class="text-sm text-gray-500">خبير - 8 سنوات</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">قسطرة القلب</span>
+                                        <span class="text-sm text-gray-500">متقدم - 6 سنوات</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">تخطيط القلب</span>
+                                        <span class="text-sm text-gray-500">خبير - 10 سنوات</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-purple-600 h-2 rounded-full" style="width: 98%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">الإنعاش القلبي</span>
+                                        <span class="text-sm text-gray-500">خبير - 8 سنوات</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-red-600 h-2 rounded-full" style="width: 92%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">البحث الطبي</span>
+                                        <span class="text-sm text-gray-500">متقدم - 5 سنوات</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-yellow-600 h-2 rounded-full" style="width: 78%"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm font-medium text-gray-700">اللغة الإنجليزية</span>
+                                        <span class="text-sm text-gray-500">ممتاز - 15 سنة</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-indigo-600 h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1 space-y-6">
+                    <!-- Profile Picture -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                        <div class="relative inline-block mb-4">
+                            <div class="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                                <i class="fas fa-user text-4xl text-blue-600"></i>
+                            </div>
+                            <button class="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-camera text-sm"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 text-lg">د. أحمد الأحمد</h3>
+                        <p class="text-gray-600 text-sm">طبيب باطني - استشاري أمراض القلب</p>
+                        <p class="text-xs text-gray-500 mt-2">عضو منذ يناير 2024</p>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">إحصائيات سريعة</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">الوظائف المتقدم لها</span>
+                                <span class="font-semibold text-blue-600">12</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">المقابلات المجدولة</span>
+                                <span class="font-semibold text-green-600">3</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">مشاهدات الملف</span>
+                                <span class="font-semibold text-purple-600">156</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">الوظائف المحفوظة</span>
+                                <span class="font-semibold text-orange-600">8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CV Download -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">السيرة الذاتية</h3>
+                        <div class="space-y-3">
+                            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center space-x-2">
+                                <i class="fas fa-download"></i>
+                                <span>تحميل السيرة الذاتية</span>
+                            </button>
+                            <button class="w-full border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium flex items-center justify-center space-x-2">
+                                <i class="fas fa-eye"></i>
+                                <span>معاينة السيرة الذاتية</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3 text-center">آخر تحديث: 15 يناير 2025</p>
+                    </div>
+
+                    <!-- Account Settings -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">إعدادات الحساب</h3>
+                        <div class="space-y-3">
+                            <a href="profile.html" class="block w-full text-center border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                                إعدادات الملف الشخصي
+                            </a>
+                            <a href="#" class="block w-full text-center border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                                إعدادات الخصوصية
+                            </a>
+                            <a href="#" class="block w-full text-center border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                                إعدادات الإشعارات
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">HealthCareers</span>
+                            <span class="text-sm text-gray-400 block">المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        منصة التوظيف الرائدة في القطاع الصحي بالمملكة العربية السعودية، نربط المواهب الطبية بأفضل الفرص المهنية.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="jobs.html" class="block text-gray-400 hover:text-white transition-colors text-sm">البحث عن وظائف</a>
+                        <a href="personal-info.html" class="block text-gray-400 hover:text-white transition-colors text-sm">إدارة الملف الشخصي</a>
+                        <a href="clinics.html" class="block text-gray-400 hover:text-white transition-colors text-sm">دليل العيادات</a>
+                        <a href="dashboard.html" class="block text-gray-400 hover:text-white transition-colors text-sm">لوحة الموظفين</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">خدماتنا</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm">توظيف الأطباء</p>
+                        <p class="text-gray-400 text-sm">توظيف الممرضين</p>
+                        <p class="text-gray-400 text-sm">التخصصات الطبية</p>
+                        <p class="text-gray-400 text-sm">الإدارة الصحية</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">تواصل معنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">+966 11 234 5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">info@healthcareers.sa</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="text-gray-400 text-sm">الرياض، المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 HealthCareers. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

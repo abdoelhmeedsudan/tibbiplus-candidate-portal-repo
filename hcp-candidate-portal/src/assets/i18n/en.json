@@ -1,0 +1,82 @@
+{
+  "common": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "hire": "Hire",
+    "clinics": "Clinics",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "search": "Search",
+    "filter": "Filter",
+    "apply": "Apply",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "jobs": "Job Search",
+    "hire": "Hire Staff",
+    "clinics": "Medical Clinics",
+    "contact": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Integrated Medical Platform",
+      "subtitle": "Search for medical jobs, hire talent, and manage your clinic efficiently",
+      "cta": "Get Started",
+      "secondaryCta": "Learn More"
+    },
+    "features": {
+      "title": "Platform Features",
+      "jobSearch": {
+        "title": "Job Search",
+        "description": "Find the best medical jobs in your area"
+      },
+      "staffHiring": {
+        "title": "Staff Hiring",
+        "description": "Hire the best medical talent for your clinic"
+      },
+      "clinicManagement": {
+        "title": "Clinic Management",
+        "description": "Manage your clinic with high efficiency"
+      }
+    },
+    "statistics": {
+      "title": "Platform Statistics",
+      "subtitle": "Growing with us every day to serve the healthcare sector in the Kingdom",
+      "jobs": "Available Jobs",
+      "clinics": "Registered Clinics",
+      "professionals": "Medical Professionals",
+      "successRate": "Success Rate"
+    }
+  },
+  "profile": {
+    "dropdown": {
+      "title": "Account",
+      "login": "Login",
+      "register": "Register",
+      "personalInfo": "Personal Information",
+      "settings": "Settings"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  }
+}
