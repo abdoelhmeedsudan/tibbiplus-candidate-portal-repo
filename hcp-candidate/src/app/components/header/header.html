@@ -1,39 +1,48 @@
  <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-md sticky top-0 z-50" [attr.dir]="languageService.direction">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-16" [class]="isRTL ? 'flex-row-reverse' : 'flex-row'">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
+                <a routerLink="/" class="flex items-center" [class]="isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'">
                     <div class="bg-blue-600 p-2 rounded-lg">
                         <i class="fas fa-heart text-white text-xl"></i>
                     </div>
                     <div class="hidden sm:block">
                         <span class="text-xl font-bold text-gray-900">HealthCareers</span>
-                        <span class="text-xs text-gray-500 block">السعودية</span>
+                        <span class="text-xs text-gray-500 block">
+                          {{ isArabic ? 'السعودية' : 'Saudi Arabia' }}
+                        </span>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">الرئيسية</a>
-                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">الوظائف</a>
-                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">العيادات</a>
-                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">اتصل بنا</a>
+                <nav class="hidden md:flex items-center" [class]="isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'">
+                    <a routerLink="/" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">
+                      {{ isArabic ? 'الرئيسية' : 'Home' }}
+                    </a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">
+                      {{ isArabic ? 'الوظائف' : 'Jobs' }}
+                    </a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">
+                      {{ isArabic ? 'العيادات' : 'Clinics' }}
+                    </a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600">
+                      {{ isArabic ? 'اتصل بنا' : 'Contact' }}
+                    </a>
                 </nav>
 
                 <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2 px-3 py-2 text-gray-700 bg-gray-50 rounded-lg">
-                        <i class="fas fa-globe text-sm"></i>
-                        <span class="text-sm font-medium">عربي</span>
-                    </div>
-                    <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                <div class="flex items-center" [class]="isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'">
+                    <!-- Language Switcher -->
+                    <app-language-switcher></app-language-switcher>
+                    
+                    <a routerLink="/dashboard" class="hidden sm:flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium" [class]="isRTL ? 'space-x-reverse space-x-1' : 'space-x-1'">
                         <i class="fas fa-building text-sm"></i>
-                        <span>للموظفين</span>
+                        <span>{{ isArabic ? 'للموظفين' : 'For Employers' }}</span>
                     </a>
-                    <a href="profile.html" class="flex items-center space-x-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                    <a routerLink="/auth/login" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium" [class]="isRTL ? 'space-x-reverse space-x-1' : 'space-x-1'">
                         <i class="fas fa-user text-sm"></i>
-                        <span class="hidden sm:inline">حسابي</span>
+                        <span class="hidden sm:inline">{{ isArabic ? 'حسابي' : 'My Account' }}</span>
                     </a>
 
                     <!-- Mobile menu button - static version -->
@@ -42,15 +51,26 @@
                     </div>
                 </div>
             </div>
+               
 
             <!-- Mobile Navigation - always visible on mobile -->
             <div class="md:hidden py-4 border-t border-gray-200">
                 <div class="flex flex-col space-y-2">
-                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">الرئيسية</a>
-                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">الوظائف</a>
-                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">العيادات</a>
-                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">اتصل بنا</a>
-                    <a href="dashboard.html" class="px-3 py-2 rounded-md text-sm font-medium text-green-600 bg-green-50 sm:hidden">لوحة الموظفين</a>
+                    <a routerLink="/" class="px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50">
+                      {{ isArabic ? 'الرئيسية' : 'Home' }}
+                    </a>
+                    <a href="jobs.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">
+                      {{ isArabic ? 'الوظائف' : 'Jobs' }}
+                    </a>
+                    <a href="clinics.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">
+                      {{ isArabic ? 'العيادات' : 'Clinics' }}
+                    </a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700">
+                      {{ isArabic ? 'اتصل بنا' : 'Contact' }}
+                    </a>
+                    <a routerLink="/dashboard" class="px-3 py-2 rounded-md text-sm font-medium text-green-600 bg-green-50 sm:hidden">
+                      {{ isArabic ? 'لوحة الموظفين' : 'Employer Dashboard' }}
+                    </a>
                 </div>
             </div>
         </div>

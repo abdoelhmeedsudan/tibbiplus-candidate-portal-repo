@@ -1,0 +1,237 @@
+<div class="min-h-screen  py-12 px-4 sm:px-6 lg:px-8 w-full">
+        <div class="max-w-2xl mx-auto c-width">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <a href="index.html" class="flex items-center justify-center space-x-2 mb-6">
+                    <div class="bg-blue-600 p-3 rounded-xl">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-gray-900">HealthCareers</span>
+                        <span class="text-sm text-gray-500 block">السعودية</span>
+                    </div>
+                </a>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">إنشاء حساب جديد</h2>
+                <p class="text-gray-600">انضم إلى أكبر منصة للتوظيف الصحي في المملكة</p>
+            </div>
+
+            <!-- User Type Selection -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">نوع الحساب</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 border-2 rounded-lg text-center border-blue-500 bg-blue-50 text-blue-700">
+                        <i class="fas fa-user-md text-2xl mb-2"></i>
+                        <div class="font-medium">باحث عن عمل</div>
+                        <div class="text-sm text-gray-500">للمهنيين الصحيين</div>
+                    </div>
+                    <div class="p-4 border-2 rounded-lg text-center border-gray-200 text-gray-700">
+                        <i class="fas fa-building text-2xl mb-2"></i>
+                        <div class="font-medium">صاحب عمل</div>
+                        <div class="text-sm text-gray-500">للمؤسسات الصحية</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="space-y-6">
+                    <!-- Name Fields -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                                الاسم الأول
+                            </label>
+                            <div class="relative">
+                                <i class="fas fa-user absolute right-3 top-3 text-gray-400"></i>
+                                <input
+                                    id="firstName"
+                                    formControlName="firstName"
+                                    type="text"
+                                    class="w-full pl-4 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    [class.border-red-500]="isFieldInvalid('firstName')"
+                                    [class.border-gray-300]="!isFieldInvalid('firstName')"
+                                    placeholder="الاسم الأول"
+                                />
+                            </div>
+                            <div *ngIf="isFieldInvalid('firstName')" class="text-red-500 text-sm mt-1">
+                                {{ getFieldError('firstName') }}
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                                اسم العائلة
+                            </label>
+                            <div class="relative">
+                                <i class="fas fa-user absolute right-3 top-3 text-gray-400"></i>
+                                <input
+                                    id="lastName"
+                                    formControlName="lastName"
+                                    type="text"
+                                    class="w-full pl-4 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    [class.border-red-500]="isFieldInvalid('lastName')"
+                                    [class.border-gray-300]="!isFieldInvalid('lastName')"
+                                    placeholder="اسم العائلة"
+                                />
+                            </div>
+                            <div *ngIf="isFieldInvalid('lastName')" class="text-red-500 text-sm mt-1">
+                                {{ getFieldError('lastName') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            البريد الإلكتروني
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="email"
+                                formControlName="email"
+                                type="email"
+                                class="w-full pl-4 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                [class.border-red-500]="isFieldInvalid('email')"
+                                [class.border-gray-300]="!isFieldInvalid('email')"
+                                placeholder="أدخل بريدك الإلكتروني"
+                            />
+                        </div>
+                        <div *ngIf="isFieldInvalid('email')" class="text-red-500 text-sm mt-1">
+                            {{ getFieldError('email') }}
+                        </div>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                            رقم الهاتف
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-phone absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="phone"
+                                formControlName="phone"
+                                type="tel"
+                                class="w-full pl-4 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                [class.border-red-500]="isFieldInvalid('phone')"
+                                [class.border-gray-300]="!isFieldInvalid('phone')"
+                                placeholder="+966 5X XXX XXXX"
+                            />
+                        </div>
+                        <div *ngIf="isFieldInvalid('phone')" class="text-red-500 text-sm mt-1">
+                            {{ getFieldError('phone') }}
+                        </div>
+                    </div>
+
+                    <!-- Password Fields -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                                كلمة المرور
+                            </label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute right-3 top-3 text-gray-400"></i>
+                                <input
+                                    id="password"
+                                    formControlName="password"
+                                    type="password"
+                                    class="w-full pl-12 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    [class.border-red-500]="isFieldInvalid('password')"
+                                    [class.border-gray-300]="!isFieldInvalid('password')"
+                                    placeholder="كلمة المرور"
+                                />
+                            </div>
+                            <div *ngIf="isFieldInvalid('password')" class="text-red-500 text-sm mt-1">
+                                {{ getFieldError('password') }}
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                                تأكيد كلمة المرور
+                            </label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute right-3 top-3 text-gray-400"></i>
+                                <input
+                                    id="confirmPassword"
+                                    formControlName="confirmPassword"
+                                    type="password"
+                                    class="w-full pl-12 pr-12 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                    [class.border-red-500]="isFieldInvalid('confirmPassword')"
+                                    [class.border-gray-300]="!isFieldInvalid('confirmPassword')"
+                                    placeholder="تأكيد كلمة المرور"
+                                />
+                            </div>
+                            <div *ngIf="isFieldInvalid('confirmPassword')" class="text-red-500 text-sm mt-1">
+                                {{ getFieldError('confirmPassword') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="flex items-start space-x-3">
+                        <input
+                            id="agreeToTerms"
+                            formControlName="agreeToTerms"
+                            type="checkbox"
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                            [class.border-red-500]="isFieldInvalid('agreeToTerms')"
+                        />
+                        <div>
+                            <label for="agreeToTerms" class="text-sm text-gray-700 leading-relaxed">
+                                أوافق على
+                                <a href="#" class="text-blue-600 hover:text-blue-700 transition-colors">
+                                    الشروط والأحكام
+                                </a>
+                                و
+                                <a href="#" class="text-blue-600 hover:text-blue-700 transition-colors">
+                                    سياسة الخصوصية
+                                </a>
+                            </label>
+                            <div *ngIf="isFieldInvalid('agreeToTerms')" class="text-red-500 text-sm mt-1">
+                                يجب الموافقة على الشروط والأحكام
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div *ngIf="errorMessage" class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                        {{ errorMessage }}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        [disabled]="registrationForm.invalid || isLoading"
+                        class="w-full py-3 rounded-lg font-medium text-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        [class.bg-blue-600]="!isLoading && !registrationForm.invalid"
+                        [class.hover:bg-blue-700]="!isLoading && !registrationForm.invalid"
+                        [class.text-white]="!isLoading && !registrationForm.invalid"
+                        [class.bg-gray-400]="isLoading || registrationForm.invalid"
+                        [class.text-gray-600]="isLoading || registrationForm.invalid"
+                        [class.cursor-not-allowed]="isLoading || registrationForm.invalid"
+                    >
+                        <span *ngIf="isLoading" class="inline-flex items-center">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            جاري إنشاء الحساب...
+                        </span>
+                        <span *ngIf="!isLoading">إنشاء الحساب</span>
+                    </button>
+                </form>
+
+                <!-- Sign In Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">
+                        لديك حساب بالفعل؟
+                        <a routerLink="/auth/login" class="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                            تسجيل الدخول
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
