@@ -30,22 +30,22 @@
             <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">نوع الحساب</h3>
                 <div class="grid grid-cols-2 gap-4">
-                    <button id="candidateType" class="user-type-btn p-4 border-2 rounded-lg transition-all text-center border-blue-500 bg-blue-50 text-blue-700" data-type="candidate">
+                    <div class="p-4 border-2 rounded-lg text-center border-blue-500 bg-blue-50 text-blue-700">
                         <i class="fas fa-user-md text-2xl mb-2"></i>
                         <div class="font-medium">باحث عن عمل</div>
                         <div class="text-sm text-gray-500">للمهنيين الصحيين</div>
-                    </button>
-                    <button id="employerType" class="user-type-btn p-4 border-2 rounded-lg transition-all text-center border-gray-200 hover:border-green-300 text-gray-700" data-type="employer">
+                    </div>
+                    <div class="p-4 border-2 rounded-lg text-center border-gray-200 text-gray-700">
                         <i class="fas fa-building text-2xl mb-2"></i>
                         <div class="font-medium">صاحب عمل</div>
                         <div class="text-sm text-gray-500">للمؤسسات الصحية</div>
-                    </button>
+                    </div>
                 </div>
             </div>
 
             <!-- Registration Form -->
             <div class="bg-white rounded-2xl shadow-lg p-8">
-                <form id="registerForm" class="space-y-6">
+                <form action="personal-info.html" method="get" class="space-y-6">
                     <!-- Name Fields -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -84,7 +84,7 @@
                     </div>
 
                     <!-- Company Name (for employers only) -->
-                    <div id="companyField" class="hidden">
+                    <div>
                         <label for="companyName" class="block text-sm font-medium text-gray-700 mb-2">
                             اسم المؤسسة الصحية
                         </label>
@@ -100,81 +100,39 @@
                         </div>
                     </div>
 
-                    <!-- Email and Phone -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                                البريد الإلكتروني
-                            </label>
-                            <div class="relative">
-                                <i class="fas fa-envelope absolute right-3 top-3 text-gray-400"></i>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    required
-                                    class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                                    placeholder="البريد الإلكتروني"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                                رقم الهاتف
-                            </label>
-                            <div class="relative">
-                                <i class="fas fa-phone absolute right-3 top-3 text-gray-400"></i>
-                                <input
-                                    id="phone"
-                                    name="phone"
-                                    type="tel"
-                                    required
-                                    class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                                    placeholder="+966 5X XXX XXXX"
-                                />
-                            </div>
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            البريد الإلكتروني
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="أدخل بريدك الإلكتروني"
+                            />
                         </div>
                     </div>
 
-                    <!-- City and Specialty (for candidates) -->
-                    <div id="candidateFields" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="city" class="block text-sm font-medium text-gray-700 mb-2">
-                                المدينة
-                            </label>
-                            <select
-                                id="city"
-                                name="city"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                            >
-                                <option value="">اختر المدينة</option>
-                                <option value="الرياض">الرياض</option>
-                                <option value="جدة">جدة</option>
-                                <option value="الدمام">الدمام</option>
-                                <option value="مكة المكرمة">مكة المكرمة</option>
-                                <option value="المدينة المنورة">المدينة المنورة</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="specialty" class="block text-sm font-medium text-gray-700 mb-2">
-                                التخصص
-                            </label>
-                            <select
-                                id="specialty"
-                                name="specialty"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                            >
-                                <option value="">اختر التخصص</option>
-                                <option value="طب باطني">طب باطني</option>
-                                <option value="طب الأطفال">طب الأطفال</option>
-                                <option value="الجراحة">الجراحة</option>
-                                <option value="التمريض">التمريض</option>
-                                <option value="الصيدلة">الصيدلة</option>
-                                <option value="طب الأسنان">طب الأسنان</option>
-                                <option value="العلاج الطبيعي">العلاج الطبيعي</option>
-                            </select>
+                    <!-- Phone Field -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                            رقم الهاتف
+                        </label>
+                        <div class="relative">
+                            <i class="fas fa-phone absolute right-3 top-3 text-gray-400"></i>
+                            <input
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                required
+                                class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                                placeholder="+966 5X XXX XXXX"
+                            />
                         </div>
                     </div>
 
@@ -194,13 +152,6 @@
                                     class="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                     placeholder="كلمة المرور"
                                 />
-                                <button
-                                    type="button"
-                                    id="togglePassword"
-                                    class="absolute left-3 top-3 text-gray-400 hover:text-gray-600 transition-colors"
-                                >
-                                    <i class="fas fa-eye"></i>
-                                </button>
                             </div>
                         </div>
 
@@ -218,13 +169,6 @@
                                     class="w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                                     placeholder="تأكيد كلمة المرور"
                                 />
-                                <button
-                                    type="button"
-                                    id="toggleConfirmPassword"
-                                    class="absolute left-3 top-3 text-gray-400 hover:text-gray-600 transition-colors"
-                                >
-                                    <i class="fas fa-eye"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -271,8 +215,5 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
-    <script src="register.js"></script>
 </body>
 </html>

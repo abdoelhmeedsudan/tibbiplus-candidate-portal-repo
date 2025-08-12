@@ -31,10 +31,10 @@
                 </nav>
 
                 <div class="flex items-center space-x-4">
-                    <button id="languageToggle" class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="flex items-center space-x-2 px-3 py-2 text-gray-700 bg-gray-50 rounded-lg">
                         <i class="fas fa-globe text-sm"></i>
-                        <span class="text-sm font-medium">EN</span>
-                    </button>
+                        <span class="text-sm font-medium">عربي</span>
+                    </div>
                     <a href="dashboard.html" class="hidden sm:flex items-center space-x-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
                         <i class="fas fa-building text-sm"></i>
                         <span>للموظفين</span>
@@ -70,13 +70,13 @@
                             <!-- Job Title -->
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">المسمى الوظيفي</label>
-                                <input type="text" id="jobTitle" placeholder="مثل: طبيب، ممرض، صيدلي" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input type="text" placeholder="مثل: طبيب، ممرض، صيدلي" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
 
                             <!-- City -->
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">المدينة</label>
-                                <select id="cityFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">جميع المدن</option>
                                     <option value="الرياض">الرياض</option>
                                     <option value="جدة">جدة</option>
@@ -88,7 +88,7 @@
                             <!-- Specialty -->
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">التخصص</label>
-                                <select id="specialtyFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">جميع التخصصات</option>
                                     <option value="باطني">طب باطني</option>
                                     <option value="أطفال">طب الأطفال</option>
@@ -98,266 +98,250 @@
                                 </select>
                             </div>
 
+                            <!-- Experience Level -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">مستوى الخبرة</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">جميع المستويات</option>
+                                    <option value="مبتدئ">مبتدئ (0-2 سنة)</option>
+                                    <option value="متوسط">متوسط (3-5 سنوات)</option>
+                                    <option value="خبير">خبير (5+ سنوات)</option>
+                                </select>
+                            </div>
+
                             <!-- Job Type -->
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">نوع العمل</label>
-                                <select id="jobTypeFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">جميع الأنواع</option>
-                                    <option value="دوام كامل">دوام كامل</option>
-                                    <option value="دوام جزئي">دوام جزئي</option>
-                                    <option value="نوبات">نوبات</option>
-                                    <option value="مؤقت">مؤقت</option>
-                                </select>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">نوع الوظيفة</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="mr-2 text-sm text-gray-700">دوام كامل</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="mr-2 text-sm text-gray-700">دوام جزئي</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        <span class="mr-2 text-sm text-gray-700">عقد مؤقت</span>
+                                    </label>
+                                </div>
                             </div>
 
-                            <!-- Experience -->
+                            <!-- Salary Range -->
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">سنوات الخبرة</label>
-                                <select id="experienceFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">جميع المستويات</option>
-                                    <option value="0-1">خريج جديد</option>
-                                    <option value="1-3">1-3 سنوات</option>
-                                    <option value="3-5">3-5 سنوات</option>
-                                    <option value="5+">أكثر من 5 سنوات</option>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">نطاق الراتب</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">جميع النطاقات</option>
+                                    <option value="0-5000">أقل من 5,000 ريال</option>
+                                    <option value="5000-10000">5,000 - 10,000 ريال</option>
+                                    <option value="10000-20000">10,000 - 20,000 ريال</option>
+                                    <option value="20000+">أكثر من 20,000 ريال</option>
                                 </select>
                             </div>
 
-                            <button id="applyFilters" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            <!-- Apply Filters Button -->
+                            <button class="w-full px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                                 تطبيق الفلاتر
+                            </button>
+
+                            <!-- Clear Filters -->
+                            <button class="w-full px-4 py-2 text-gray-600 font-medium hover:text-blue-600 transition-colors">
+                                مسح الفلاتر
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Main Content -->
+                <!-- Jobs List -->
                 <div class="lg:col-span-3">
                     <!-- Search Bar -->
                     <div class="bg-white rounded-xl shadow-md p-6 mb-6">
                         <div class="flex flex-col md:flex-row gap-4">
-                            <div class="flex-1 relative">
-                                <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
-                                <input type="text" id="mainSearch" placeholder="ابحث عن وظيفة..." class="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div class="flex-1">
+                                <input type="text" placeholder="ابحث عن وظيفة، تخصص، أو شركة..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
-                            <button id="searchBtn" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            <button class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-search ml-2"></i>
                                 بحث
                             </button>
                         </div>
                     </div>
 
-                    <!-- Results Header -->
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="text-gray-600">
-                            <span class="font-medium text-gray-900" id="jobCount">3</span> وظيفة متاحة
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <select id="sortBy" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option>الأحدث أولاً</option>
-                                <option>الأقدم أولاً</option>
-                                <option>الراتب: الأعلى أولاً</option>
-                                <option>الراتب: الأقل أولاً</option>
+                    <!-- Results Info -->
+                    <div class="flex justify-between items-center mb-6">
+                        <p class="text-gray-600">تم العثور على <span class="font-semibold">24</span> وظيفة</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">ترتيب حسب:</span>
+                            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>الأحدث</option>
+                                <option>الأقدم</option>
+                                <option>الأعلى راتباً</option>
+                                <option>الأقل راتباً</option>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Job Listings -->
-                    <div id="jobListings" class="space-y-6">
-                        <!-- Job 1 -->
-                        <div class="job-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6" data-city="الرياض" data-specialty="باطني" data-type="دوام كامل">
-                            <div class="flex items-start justify-between mb-4">
+                    <!-- Jobs List -->
+                    <div class="space-y-4">
+                        <!-- Job Card 1 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="flex-1">
                                     <div class="flex items-center space-x-3 mb-2">
-                                        <h3 class="text-xl font-semibold text-gray-900 hover:text-blue-600 cursor-pointer">
-                                            طبيب باطني
-                                        </h3>
-                                        <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                            دوام كامل
-                                        </span>
+                                        <h3 class="text-xl font-semibold text-gray-900">طبيب باطني</h3>
+                                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">دوام كامل</span>
                                     </div>
-                                    <div class="flex items-center space-x-4 text-gray-600 mb-3">
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-building text-sm"></i>
-                                            <span>مستشفى الملك فيصل التخصصي</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-map-marker-alt text-sm"></i>
-                                            <span>الرياض</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-clock text-sm"></i>
-                                            <span>منذ يومين</span>
-                                        </div>
+                                    <p class="text-gray-600 mb-2">مستشفى الملك فهد - الرياض</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>الرياض</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>25,000 - 35,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ يومين</span>
                                     </div>
                                 </div>
-                                <button class="save-job p-2 rounded-lg transition-colors text-gray-400 hover:text-red-500 hover:bg-red-50">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-
-                            <p class="text-gray-700 mb-4 leading-relaxed">نبحث عن طبيب باطني مؤهل للانضمام إلى فريقنا الطبي المتميز</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-dollar-sign text-green-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">15,000 - 20,000 ريال</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-clock text-blue-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">خبرة: 3-5 سنوات</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-bookmark text-purple-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">3 متطلبات</span>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">بكالوريوس الطب والجراحة</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">خبرة 3 سنوات على الأقل</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">+1 المزيد</span>
-                                </div>
-                                <div class="flex gap-3">
-                                    <a href="job-details.html?id=1" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
                                         عرض التفاصيل
                                     </a>
-                                    <button class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
                                         <span>تقدم الآن</span>
                                         <i class="fas fa-chevron-left text-sm"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Job 2 -->
-                        <div class="job-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6" data-city="جدة" data-specialty="تمريض" data-type="نوبات">
-                            <div class="flex items-start justify-between mb-4">
+                        <!-- Job Card 2 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="flex-1">
                                     <div class="flex items-center space-x-3 mb-2">
-                                        <h3 class="text-xl font-semibold text-gray-900 hover:text-blue-600 cursor-pointer">
-                                            ممرض/ممرضة العناية المركزة
-                                        </h3>
-                                        <span class="px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                                            نوبات
-                                        </span>
+                                        <h3 class="text-xl font-semibold text-gray-900">ممرض متخصص</h3>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">دوام جزئي</span>
                                     </div>
-                                    <div class="flex items-center space-x-4 text-gray-600 mb-3">
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-building text-sm"></i>
-                                            <span>مستشفى المملكة</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-map-marker-alt text-sm"></i>
-                                            <span>جدة</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-clock text-sm"></i>
-                                            <span>منذ 3 أيام</span>
-                                        </div>
+                                    <p class="text-gray-600 mb-2">مركز طبي متطور - جدة</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>جدة</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>8,000 - 12,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ 3 أيام</span>
                                     </div>
                                 </div>
-                                <button class="save-job p-2 rounded-lg transition-colors text-red-500 bg-red-50">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-
-                            <p class="text-gray-700 mb-4 leading-relaxed">فرصة عمل ممتازة لممرض/ممرضة في وحدة العناية المركزة</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-dollar-sign text-green-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">8,000 - 12,000 ريال</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-clock text-blue-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">خبرة: 2-4 سنوات</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-bookmark text-purple-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">3 متطلبات</span>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">بكالوريوس التمريض</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">رخصة مزاولة المهنة</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">+1 المزيد</span>
-                                </div>
-                                <div class="flex gap-3">
-                                    <a href="job-details.html?id=2" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
                                         عرض التفاصيل
                                     </a>
-                                    <button class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
                                         <span>تقدم الآن</span>
                                         <i class="fas fa-chevron-left text-sm"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Job 3 -->
-                        <div class="job-card bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6" data-city="الدمام" data-specialty="أطفال" data-type="دوام جزئي">
-                            <div class="flex items-start justify-between mb-4">
+                        <!-- Job Card 3 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="flex-1">
                                     <div class="flex items-center space-x-3 mb-2">
-                                        <h3 class="text-xl font-semibold text-gray-900 hover:text-blue-600 cursor-pointer">
-                                            طبيب أطفال
-                                        </h3>
-                                        <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                            دوام جزئي
-                                        </span>
+                                        <h3 class="text-xl font-semibold text-gray-900">صيدلي سريري</h3>
+                                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">دوام كامل</span>
                                     </div>
-                                    <div class="flex items-center space-x-4 text-gray-600 mb-3">
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-building text-sm"></i>
-                                            <span>مجمع عيادات الحياة</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-map-marker-alt text-sm"></i>
-                                            <span>الدمام</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <i class="fas fa-clock text-sm"></i>
-                                            <span>منذ أسبوع</span>
-                                        </div>
+                                    <p class="text-gray-600 mb-2">صيدلية المجتمع - الدمام</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>الدمام</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>15,000 - 22,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ أسبوع</span>
                                     </div>
                                 </div>
-                                <button class="save-job p-2 rounded-lg transition-colors text-gray-400 hover:text-red-500 hover:bg-red-50">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                            </div>
-
-                            <p class="text-gray-700 mb-4 leading-relaxed">مطلوب طبيب أطفال متخصص لعيادة حديثة ومجهزة بأحدث المعدات</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-dollar-sign text-green-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">12,000 - 18,000 ريال</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-clock text-blue-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">خبرة: 5+ سنوات</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-bookmark text-purple-600 text-sm"></i>
-                                    <span class="text-sm font-medium text-gray-900">3 متطلبات</span>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">تخصص طب الأطفال</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">خبرة واسعة</span>
-                                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">+1 المزيد</span>
-                                </div>
-                                <div class="flex gap-3">
-                                    <a href="job-details.html?id=3" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
                                         عرض التفاصيل
                                     </a>
-                                    <button class="apply-btn px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
                                         <span>تقدم الآن</span>
                                         <i class="fas fa-chevron-left text-sm"></i>
-                                    </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 4 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <h3 class="text-xl font-semibold text-gray-900">طبيب أطفال</h3>
+                                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">دوام كامل</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-2">مستشفى الأطفال التخصصي - الرياض</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>الرياض</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>30,000 - 45,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ 5 أيام</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                        عرض التفاصيل
+                                    </a>
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                        <span>تقدم الآن</span>
+                                        <i class="fas fa-chevron-left text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 5 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <h3 class="text-xl font-semibold text-gray-900">جراح عام</h3>
+                                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">دوام كامل</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-2">مركز الجراحة المتطور - جدة</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>جدة</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>40,000 - 60,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ أسبوع</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                        عرض التفاصيل
+                                    </a>
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                        <span>تقدم الآن</span>
+                                        <i class="fas fa-chevron-left text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 6 -->
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-3 mb-2">
+                                        <h3 class="text-xl font-semibold text-gray-900">أخصائي أشعة</h3>
+                                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">دوام جزئي</span>
+                                    </div>
+                                    <p class="text-gray-600 mb-2">مركز الأشعة المتخصص - الدمام</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-map-marker-alt ml-1"></i>الدمام</span>
+                                        <span><i class="fas fa-money-bill-wave ml-1"></i>20,000 - 30,000 ريال</span>
+                                        <span><i class="fas fa-clock ml-1"></i>منذ 10 أيام</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col space-y-2">
+                                    <a href="job-details.html" class="px-4 py-2 text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                        عرض التفاصيل
+                                    </a>
+                                    <a href="job-details.html" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center space-x-1">
+                                        <span>تقدم الآن</span>
+                                        <i class="fas fa-chevron-left text-sm"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -365,17 +349,17 @@
 
                     <!-- Pagination -->
                     <div class="mt-8 flex items-center justify-center space-x-2">
-                        <button id="prevPage" class="p-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <div class="p-2 rounded-lg border border-gray-300 text-gray-400">
                             <i class="fas fa-chevron-right"></i>
-                        </button>
+                        </div>
 
-                        <button class="px-4 py-2 rounded-lg font-medium transition-colors bg-blue-600 text-white">1</button>
-                        <button class="px-4 py-2 rounded-lg font-medium transition-colors text-gray-600 hover:bg-gray-50">2</button>
-                        <button class="px-4 py-2 rounded-lg font-medium transition-colors text-gray-600 hover:bg-gray-50">3</button>
+                        <div class="px-4 py-2 rounded-lg font-medium transition-colors bg-blue-600 text-white">1</div>
+                        <a href="#" class="px-4 py-2 rounded-lg font-medium transition-colors text-gray-600 hover:bg-gray-50">2</a>
+                        <a href="#" class="px-4 py-2 rounded-lg font-medium transition-colors text-gray-600 hover:bg-gray-50">3</a>
 
-                        <button id="nextPage" class="p-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50">
+                        <a href="#" class="p-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50">
                             <i class="fas fa-chevron-left"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -447,8 +431,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="jobs.js"></script>
 </body>
 </html>
