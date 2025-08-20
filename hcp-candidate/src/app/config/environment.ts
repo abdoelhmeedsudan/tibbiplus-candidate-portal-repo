@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api', // Update with your actual API URL
+  apiUrl: 'http://localhost:5158/api', // Update with your actual API URL
   apiVersion: 'v1',
   appName: 'HCP Candidate Portal',
   tokenKey: 'auth_token',
@@ -13,13 +13,13 @@ export const environment = {
 
 export const apiEndpoints = {
   auth: {
-    login: '/auth/login',
-    register: '/auth/register',
-    logout: '/auth/logout',
-    refresh: '/auth/refresh',
-    verify: '/auth/verify',
-    passwordReset: '/auth/password-reset',
-    changePassword: '/auth/change-password',
+    login: '/Auth/login',
+    register: '/Auth/Registration',
+    logout: '/Auth/logout',
+    refresh: '/Auth/refresh',
+    verify: '/Auth/verify',
+    passwordReset: '/Auth/password-reset',
+    changePassword: '/Auth/change-password',
   },
   users: {
     base: '/users',

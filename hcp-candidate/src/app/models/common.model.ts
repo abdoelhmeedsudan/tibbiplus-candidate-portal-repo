@@ -27,6 +27,23 @@ export interface PaginatedResponse<T> {
   };
 }
 
+export interface PaginatedApiResponse<T> {
+  httpStatusCode: number;
+  succeeded: boolean;
+  message: string;
+  errors?: string[] | null;
+  modelErrors?: any | null;
+  data: {
+    currentPage: number;
+    totalPages: number;
+    pageSize: number;
+    totalCount: number;
+    hasPrevious: boolean;
+    hasNext: boolean;
+    items: T[];
+  };
+}
+
 export interface ApiResponseBase {
   success: boolean;
   message?: string;

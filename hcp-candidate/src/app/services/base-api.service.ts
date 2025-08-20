@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { PaginatedApiResponse } from '../models/common.model';
 
 export interface ApiResponse<T> {
   data: T;
@@ -14,7 +15,7 @@ export interface ApiResponse<T> {
   providedIn: 'root'
 })
 export class BaseApiService {
-  protected readonly baseUrl = 'http://localhost:3000/api'; // Update with your API URL
+  protected readonly baseUrl = 'http://localhost:5158/api'; // Update with your API URL
   
   protected httpOptions = {
     headers: new HttpHeaders({
@@ -34,6 +35,19 @@ export class BaseApiService {
     return this.http.get<ApiResponse<T>>(`${this.baseUrl}/${endpoint}`, options)
       .pipe(
         map(response => response.data),
+        catchError(this.handleError)
+      );
+  }
+
+  /**
+   * GET request for paginated responses
+   */
+  protected getPaginated<T>(endpoint: string, params?: HttpParams): Observable<T[]> {
+    const options = params ? { ...this.httpOptions, params } : this.httpOptions;
+    
+    return this.http.get<PaginatedApiResponse<T>>(`${this.baseUrl}/${endpoint}`, options)
+      .pipe(
+        map(response => response.data.items),
         catchError(this.handleError)
       );
   }

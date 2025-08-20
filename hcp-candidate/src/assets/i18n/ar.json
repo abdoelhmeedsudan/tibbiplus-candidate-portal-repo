@@ -1,0 +1,209 @@
+{
+  "app": {
+    "title": "المهن الصحية",
+    "subtitle": "السعودية",
+    "logo_alt": "شعار المهن الصحية"
+  },
+  "common": {
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "search": "بحث",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "warning": "تحذير",
+    "info": "معلومات",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "required": "*",
+    "optional": "(اختياري)",
+    "and": "و"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "jobs": "الوظائف",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "dashboard": "لوحة التحكم",
+    "settings": "الإعدادات"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "subtitle": "سجل دخولك إلى حسابك",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "remember_me": "تذكرني",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "submitting": "جاري تسجيل الدخول...",
+      "no_account": "ليس لديك حساب؟",
+      "create_account": "إنشاء حساب جديد"
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "انضم إلى أكبر منصة للتوظيف الصحي في المملكة",
+      "account_type": "نوع الحساب",
+      "userTypeLabel": "نوع المستخدم",
+      "userTypeRequired": "يجب اختيار نوع المستخدم",
+      "job_seeker": "باحث عن عمل",
+      "job_seeker_desc": "للمهنيين الصحيين",
+      "employer": "صاحب عمل",
+      "employer_desc": "للمؤسسات الصحية",
+      "first_name": "الاسم الأول",
+      "firstName": "الاسم الأول",
+      "firstNamePlaceholder": "أدخل اسمك الأول",
+      "last_name": "اسم العائلة",
+      "lastName": "الاسم الأخير",
+      "lastNamePlaceholder": "أدخل اسمك الأخير",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "أدخل رقم هاتفك",
+      "national_id": "رقم الهوية",
+      "password": "كلمة المرور",
+      "passwordPlaceholder": "أدخل كلمة مرور قوية",
+      "confirm_password": "تأكيد كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
+      "agree_terms": "أوافق على",
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية",
+      "submit": "إنشاء الحساب",
+      "submitting": "جاري إنشاء الحساب...",
+      "already_have_account": "لديك حساب بالفعل؟",
+      "alreadyHaveAccount": "هل تملك حساباً بالفعل؟",
+      "sign_in": "تسجيل الدخول"
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب",
+      "email": "يرجى إدخال بريد إلكتروني صحيح",
+      "minlength": "الحد الأدنى {{min}} حرف",
+      "minLength": "يجب أن يحتوي على {{min}} أحرف على الأقل",
+      "maxlength": "الحد الأقصى {{max}} حرف",
+      "maxLength": "يجب ألا يتجاوز {{max}} حرف",
+      "pattern": "تنسيق البيانات غير صحيح",
+      "min": "القيمة أقل من المسموح",
+      "max": "القيمة أكثر من المسموح",
+      "strong_password": "كلمة المرور يجب أن تحتوي على حرف كبير وحرف صغير ورقم",
+      "weakPassword": "كلمة المرور ضعيفة. يجب أن تحتوي على أحرف كبيرة وصغيرة وأرقام ورموز خاصة",
+      "password_mismatch": "كلمات المرور غير متطابقة",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين",
+      "phone": "يرجى إدخال رقم هاتف صحيح (05xxxxxxxx)",
+      "national_id": "يرجى إدخال رقم هوية صحيح (10 أرقام)"
+    },
+    "field_names": {
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "password": "كلمة المرور",
+      "confirm_password": "تأكيد كلمة المرور",
+      "national_id": "رقم الهوية"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "اعثر على وظيفة أحلامك في المجال الصحي",
+      "subtitle": "تواصل مع أفضل المؤسسات الصحية في المملكة العربية السعودية",
+      "search_placeholder": "ابحث عن الوظائف أو التخصصات أو المواقع",
+      "search_button": "البحث عن وظائف",
+      "browse_all": "تصفح جميع الوظائف"
+    },
+    "stats": {
+      "jobs": "وظيفة نشطة",
+      "employers": "صاحب عمل صحي",
+      "candidates": "مرشح مسجل",
+      "success": "معدل النجاح"
+    },
+    "features": {
+      "title": "لماذا تختار المهن الصحية؟",
+      "feature1": {
+        "title": "منصة متخصصة",
+        "description": "مخصصة حصرياً للمهنيين الصحيين"
+      },
+      "feature2": {
+        "title": "أفضل أصحاب العمل",
+        "description": "تواصل مع المؤسسات الصحية الرائدة"
+      },
+      "feature3": {
+        "title": "النمو المهني",
+        "description": "اعثر على الفرص التي تناسب خبرتك"
+      }
+    }
+  },
+  "jobs": {
+    "title": "الوظائف الصحية",
+    "filter": {
+      "all": "جميع الوظائف",
+      "specialty": "التخصص",
+      "location": "الموقع",
+      "experience": "مستوى الخبرة",
+      "job_type": "نوع الوظيفة",
+      "salary_range": "نطاق الراتب"
+    },
+    "card": {
+      "posted": "تاريخ النشر",
+      "deadline": "آخر موعد للتقديم",
+      "location": "الموقع",
+      "experience": "الخبرة",
+      "salary": "الراتب",
+      "apply_now": "قدم الآن",
+      "view_details": "عرض التفاصيل"
+    }
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "personal_info": "المعلومات الشخصية",
+    "professional_info": "المعلومات المهنية",
+    "documents": "الوثائق",
+    "applications": "الطلبات",
+    "settings": "الإعدادات"
+  },
+  "footer": {
+    "about": "من نحن",
+    "careers": "الوظائف",
+    "contact": "اتصل بنا",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "copyright": "© 2025 المهن الصحية. جميع الحقوق محفوظة."
+  },
+  "messages": {
+    "success": {
+      "registration": "تم إنشاء الحساب بنجاح! يمكنك الآن تسجيل الدخول.",
+      "login": "تم تسجيل الدخول بنجاح! مرحباً بك مرة أخرى.",
+      "profile_updated": "تم تحديث الملف الشخصي بنجاح.",
+      "application_submitted": "تم تقديم الطلب بنجاح."
+    },
+    "errors": {
+      "registration": "حدث خطأ أثناء إنشاء الحساب. يرجى المحاولة مرة أخرى.",
+      "login": "حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "network": "خطأ في الشبكة. يرجى التحقق من الاتصال.",
+      "server": "خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقاً.",
+      "invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+    }
+  },
+  "placeholders": {
+    "first_name": "أدخل اسمك الأول",
+    "last_name": "أدخل اسم العائلة",
+    "email": "أدخل بريدك الإلكتروني",
+    "phone": "+966 5X XXX XXXX",
+    "password": "أدخل كلمة المرور",
+    "confirm_password": "أكد كلمة المرور",
+    "national_id": "أدخل رقم هويتك"
+  },
+  "help_text": {
+    "phone": "مثال: 0512345678",
+    "national_id": "10 أرقام",
+    "password": "يجب أن تحتوي على حرف كبير وحرف صغير ورقم"
+  }
+}

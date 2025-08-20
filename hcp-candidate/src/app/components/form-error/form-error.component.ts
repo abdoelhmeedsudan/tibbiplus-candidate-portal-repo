@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-form-error',
@@ -30,6 +31,8 @@ export class FormErrorComponent {
   @Input() fieldName: string = '';
   @Input() customErrorMessages: { [key: string]: string } = {};
 
+  private translationService = inject(TranslationService);
+
   public get shouldShowError(): boolean {
     return !!(this.control && this.control.invalid && this.control.touched);
   }
@@ -56,98 +59,72 @@ export class FormErrorComponent {
 
     switch (errorKey) {
       case 'required':
-        return `${fieldDisplayName} مطلوب`;
+        return this.translationService.getValidationMessage('required');
       
       case 'email':
-        return 'يرجى إدخال بريد إلكتروني صحيح';
+        return this.translationService.getValidationMessage('email');
       
       case 'minlength':
-        return `${fieldDisplayName} يجب أن يحتوي على ${errorValue.requiredLength} أحرف على الأقل`;
+        return this.translationService.getValidationMessage('minlength', { min: errorValue.requiredLength });
       
       case 'maxlength':
-        return `${fieldDisplayName} يجب ألا يتجاوز ${errorValue.requiredLength} حرف`;
+        return this.translationService.getValidationMessage('maxlength', { max: errorValue.requiredLength });
       
       case 'min':
-        return `${fieldDisplayName} يجب أن يكون أكبر من أو يساوي ${errorValue.min}`;
+        return this.translationService.getValidationMessage('min');
       
       case 'max':
-        return `${fieldDisplayName} يجب أن يكون أصغر من أو يساوي ${errorValue.max}`;
+        return this.translationService.getValidationMessage('max');
       
       case 'pattern':
         return this.getPatternErrorMessage();
       
       case 'passwordMismatch':
-        return 'كلمات المرور غير متطابقة';
+        return this.translationService.getValidationMessage('password_mismatch');
       
       case 'requiredTrue':
-        return 'يجب الموافقة على الشروط والأحكام';
+        return this.translationService.getValidationMessage('required');
       
       case 'phoneNumber':
-        return 'يرجى إدخال رقم هاتف صحيح';
+        return this.translationService.getValidationMessage('phone');
       
       case 'dateInvalid':
-        return 'يرجى إدخال تاريخ صحيح';
+        return this.translationService.getValidationMessage('pattern');
       
       case 'futureDate':
-        return 'التاريخ يجب أن يكون في المستقبل';
+        return this.translationService.getValidationMessage('pattern');
       
       case 'pastDate':
-        return 'التاريخ يجب أن يكون في الماضي';
+        return this.translationService.getValidationMessage('pattern');
       
       case 'age':
-        return `العمر يجب أن يكون بين ${errorValue.min} و ${errorValue.max} سنة`;
+        return this.translationService.getValidationMessage('pattern');
       
       case 'uniqueEmail':
-        return 'هذا البريد الإلكتروني مُستخدم بالفعل';
+        return this.translationService.getValidationMessage('email');
       
       case 'strongPassword':
-        return 'كلمة المرور يجب أن تحتوي على حرف كبير وصغير ورقم ورمز خاص';
+        return this.translationService.getValidationMessage('strong_password');
       
       default:
-        return `${fieldDisplayName} غير صحيح`;
+        return this.translationService.getValidationMessage('pattern');
     }
   }
 
   private getFieldDisplayName(): string {
-    const arabicFieldNames: { [key: string]: string } = {
-      'firstName': 'الاسم الأول',
-      'lastName': 'اسم العائلة',
-      'fullName': 'الاسم الكامل',
-      'email': 'البريد الإلكتروني',
-      'phone': 'رقم الهاتف',
-      'password': 'كلمة المرور',
-      'confirmPassword': 'تأكيد كلمة المرور',
-      'dateOfBirth': 'تاريخ الميلاد',
-      'address': 'العنوان',
-      'city': 'المدينة',
-      'country': 'الدولة',
-      'jobTitle': 'المسمى الوظيفي',
-      'company': 'الشركة',
-      'experience': 'الخبرة',
-      'salary': 'الراتب',
-      'description': 'الوصف',
-      'skills': 'المهارات',
-      'education': 'التعليم',
-      'certification': 'الشهادة',
-      'specialization': 'التخصص',
-      'department': 'القسم',
-      'agreeToTerms': 'الموافقة على الشروط',
-      'acceptPrivacy': 'قبول سياسة الخصوصية'
-    };
-
-    return arabicFieldNames[this.fieldName] || this.fieldName;
+    return this.translationService.getFieldName(this.fieldName);
   }
 
   private getPatternErrorMessage(): string {
     switch (this.fieldName) {
       case 'phone':
-        return 'يرجى إدخال رقم هاتف صحيح (مثال: +966501234567)';
+        return this.translationService.getValidationMessage('phone');
       case 'nationalId':
-        return 'يرجى إدخال رقم هوية صحيح';
+        return this.translationService.getValidationMessage('national_id');
       case 'postalCode':
-        return 'يرجى إدخال رمز بريدي صحيح';
+        return this.translationService.getValidationMessage('pattern');
       default:
-        return `تنسيق ${this.getFieldDisplayName()} غير صحيح`;
+        return this.translationService.getValidationMessage('pattern');
     }
   }
 }

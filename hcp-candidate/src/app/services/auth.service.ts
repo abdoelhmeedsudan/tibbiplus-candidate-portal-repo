@@ -17,7 +17,7 @@ import {
 })
 export class AuthService extends BaseApiService {
 
-  private readonly endpoint = 'auth';
+  private readonly endpoint = 'Auth';
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   private tokenKey = 'auth_token';
   private refreshTokenKey = 'refresh_token';
@@ -62,7 +62,7 @@ export class AuthService extends BaseApiService {
    * Register new user
    */
   register(userData: RegisterRequest): Observable<LoginResponse> {
-    return this.post<LoginResponse>(`${this.endpoint}/register`, userData)
+    return this.post<LoginResponse>(`${this.endpoint}/Registration`, userData)
       .pipe(
         tap(response => {
           this.storeTokens(response.token, response.refreshToken);
@@ -154,23 +154,31 @@ export class AuthService extends BaseApiService {
    * Get stored token
    */
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      return localStorage.getItem(this.tokenKey);
+    }
+    return null;
   }
 
   /**
    * Get stored refresh token
    */
   getRefreshToken(): string | null {
-    return localStorage.getItem(this.refreshTokenKey);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      return localStorage.getItem(this.refreshTokenKey);
+    }
+    return null;
   }
 
   /**
    * Store tokens
    */
   private storeTokens(token: string, refreshToken?: string): void {
-    localStorage.setItem(this.tokenKey, token);
-    if (refreshToken) {
-      localStorage.setItem(this.refreshTokenKey, refreshToken);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      localStorage.setItem(this.tokenKey, token);
+      if (refreshToken) {
+        localStorage.setItem(this.refreshTokenKey, refreshToken);
+      }
     }
   }
 
@@ -178,7 +186,9 @@ export class AuthService extends BaseApiService {
    * Clear stored tokens
    */
   private clearTokens(): void {
-    localStorage.removeItem(this.tokenKey);
-    localStorage.removeItem(this.refreshTokenKey);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      localStorage.removeItem(this.tokenKey);
+      localStorage.removeItem(this.refreshTokenKey);
+    }
   }
 }

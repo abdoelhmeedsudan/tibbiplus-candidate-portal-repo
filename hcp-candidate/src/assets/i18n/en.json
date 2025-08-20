@@ -1,0 +1,223 @@
+{
+  "app": {
+    "title": "HealthCareers",
+    "subtitle": "Saudi Arabia",
+    "logo_alt": "HealthCareers Logo"
+  },
+  "common": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "required": "*",
+    "optional": "(optional)",
+    "and": "and"
+  },
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "required": "*",
+    "optional": "(optional)",
+    "and": "and",
+  
+  "navigation": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "settings": "Settings"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Sign in to your account",
+      "email": "Email Address",
+      "password": "Password",
+      "remember_me": "Remember me",
+      "forgot_password": "Forgot password?",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "no_account": "Don't have an account?",
+      "create_account": "Create new account"
+    },
+    "register": {
+      "title": "Create New Account",
+      "subtitle": "Join the largest healthcare employment platform in the Kingdom",
+      "account_type": "Account Type",
+      "userTypeLabel": "User Type",
+      "userTypeRequired": "User type is required",
+      "job_seeker": "Job Seeker",
+      "job_seeker_desc": "For healthcare professionals",
+      "employer": "Employer",
+      "employer_desc": "For healthcare institutions",
+      "first_name": "First Name",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "last_name": "Last Name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "national_id": "National ID",
+      "password": "Password",
+      "passwordPlaceholder": "Enter a strong password",
+      "confirm_password": "Confirm Password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "agree_terms": "I agree to the",
+      "terms": "Terms and Conditions",
+      "privacy": "Privacy Policy",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "already_have_account": "Already have an account?",
+      "alreadyHaveAccount": "Already have an account?",
+      "sign_in": "Sign in"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "minlength": "Minimum length is {{min}} characters",
+      "minLength": "Must be at least {{min}} characters long",
+      "maxlength": "Maximum length is {{max}} characters",
+      "maxLength": "Must not exceed {{max}} characters",
+      "pattern": "Invalid format",
+      "min": "Value is less than allowed",
+      "max": "Value is greater than allowed",
+      "strong_password": "Password must contain uppercase, lowercase and number",
+      "weakPassword": "Weak password. Must contain uppercase, lowercase, numbers and special characters",
+      "password_mismatch": "Passwords do not match",
+      "passwordMismatch": "Passwords do not match",
+      "phone": "Please enter a valid phone number (05xxxxxxxx)",
+      "national_id": "Please enter a valid national ID (10 digits)"
+    },
+    "field_names": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "national_id": "National ID"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Find Your Dream Healthcare Job",
+      "subtitle": "Connect with top healthcare institutions in Saudi Arabia",
+      "search_placeholder": "Search for jobs, specialties, or locations",
+      "search_button": "Search Jobs",
+      "browse_all": "Browse All Jobs"
+    },
+    "stats": {
+      "jobs": "Active Jobs",
+      "employers": "Healthcare Employers",
+      "candidates": "Registered Candidates",
+      "success": "Success Rate"
+    },
+    "features": {
+      "title": "Why Choose HealthCareers?",
+      "feature1": {
+        "title": "Specialized Platform",
+        "description": "Dedicated exclusively to healthcare professionals"
+      },
+      "feature2": {
+        "title": "Top Employers",
+        "description": "Connect with leading healthcare institutions"
+      },
+      "feature3": {
+        "title": "Career Growth",
+        "description": "Find opportunities that match your expertise"
+      }
+    }
+  },
+  "jobs": {
+    "title": "Healthcare Jobs",
+    "filter": {
+      "all": "All Jobs",
+      "specialty": "Specialty",
+      "location": "Location",
+      "experience": "Experience Level",
+      "job_type": "Job Type",
+      "salary_range": "Salary Range"
+    },
+    "card": {
+      "posted": "Posted",
+      "deadline": "Deadline",
+      "location": "Location",
+      "experience": "Experience",
+      "salary": "Salary",
+      "apply_now": "Apply Now",
+      "view_details": "View Details"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "personal_info": "Personal Information",
+    "professional_info": "Professional Information",
+    "documents": "Documents",
+    "applications": "Applications",
+    "settings": "Settings"
+  },
+  "footer": {
+    "about": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 HealthCareers. All rights reserved."
+  },
+  "messages": {
+    "success": {
+      "registration": "Account created successfully! You can now log in.",
+      "login": "Login successful! Welcome back.",
+      "profile_updated": "Profile updated successfully.",
+      "application_submitted": "Application submitted successfully."
+    },
+    "errors": {
+      "registration": "An error occurred during registration. Please try again.",
+      "login": "An error occurred during login. Please try again.",
+      "network": "Network error. Please check your connection.",
+      "server": "Server error. Please try again later.",
+      "invalid_credentials": "Invalid email or password."
+    }
+  },
+  "placeholders": {
+    "first_name": "Enter your first name",
+    "last_name": "Enter your last name",
+    "email": "Enter your email address",
+    "phone": "+966 5X XXX XXXX",
+    "password": "Enter your password",
+    "confirm_password": "Confirm your password",
+    "national_id": "Enter your national ID"
+  },
+  "help_text": {
+    "phone": "Example: 0512345678",
+    "national_id": "10 digits",
+    "password": "Must contain uppercase, lowercase and number"
+  }
+}

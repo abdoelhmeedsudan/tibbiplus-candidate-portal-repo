@@ -45,6 +45,36 @@ export interface LoginResponse {
 }
 
 export interface RegisterRequest {
+  firstName: string;
+  lastName: string;
+  firstNameEn?: string;
+  lastNameEn?: string;
+  dateOfBirth?: string;
+  gender?: string;
+  email: string;
+  mobileNumber?: string;
+  phoneNumber?: string;
+  birthDate?: string;
+  nationalityId?: string;
+  countryId?: string;
+  cityId?: string;
+  maritalStatus?: string;
+  address?: string;
+  licenseNumber?: string;
+  yearsOfExperience?: number;
+  specialization?: string;
+  jobTitleId?: string;
+  medicalCouncilId?: string;
+  medicalCouncilNumber?: string;
+  medicalCouncilRegistrationDate?: string;
+  userName?: string;
+  password: string;
+  confirmPassword: string;
+  agreeToTerms: boolean;
+}
+
+// Simple registration request for frontend form
+export interface SimpleRegisterRequest {
   email: string;
   password: string;
   confirmPassword: string;
@@ -68,4 +98,31 @@ export interface ChangePasswordRequest {
   currentPassword: string;
   newPassword: string;
   confirmPassword: string;
+}
+
+// Lookup interfaces
+export interface JobTitle {
+  id: string;
+  name: string;
+  nameEn: string;
+}
+
+export interface Nationality {
+  id: string;
+  name: string;
+  nameEn: string;
+}
+
+export interface City {
+  id: string;
+  name: string;
+  nameEn: string;
+  countryId?: string;
+}
+
+export interface MedicalCouncil {
+  id: string;
+  name: string;
+  nameEn: string;
+  countryId?: string;
 }

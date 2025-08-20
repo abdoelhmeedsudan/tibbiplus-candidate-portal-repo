@@ -1,74 +1,75 @@
 <div class="p-8 bg-gray-50 min-h-screen">
   <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">إنشاء حساب جديد</h2>
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
+      {{ translationService.getAuthText('register', 'title') }}
+    </h2>
     
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       
       <!-- First Name -->
       <app-form-field
-        label="الاسم الأول"
+        [label]="translationService.getAuthText('register', 'first_name')"
         fieldName="firstName"
         [required]="true"
         icon="user"
-        placeholder="أدخل اسمك الأول"
+        [placeholder]="translationService.getPlaceholder('first_name')"
         [control]="registrationForm.get('firstName')"
       ></app-form-field>
 
       <!-- Last Name -->
       <app-form-field
-        label="الاسم الأخير"
+        [label]="translationService.getAuthText('register', 'last_name')"
         fieldName="lastName"
         [required]="true"
         icon="user"
-        placeholder="أدخل اسمك الأخير"
+        [placeholder]="translationService.getPlaceholder('last_name')"
         [control]="registrationForm.get('lastName')"
       ></app-form-field>
 
       <!-- Email -->
       <app-form-field
-        label="البريد الإلكتروني"
+        [label]="translationService.getAuthText('register', 'email')"
         fieldName="email"
         type="email"
         [required]="true"
         icon="envelope"
-        placeholder="أدخل بريدك الإلكتروني"
+        [placeholder]="translationService.getPlaceholder('email')"
         [control]="registrationForm.get('email')"
       ></app-form-field>
 
       <!-- Phone -->
       <app-form-field
-        label="رقم الهاتف"
+        [label]="translationService.getAuthText('register', 'phone')"
         fieldName="phone"
         type="tel"
         [required]="true"
         icon="phone"
-        placeholder="أدخل رقم هاتفك (05xxxxxxxx)"
-        helpText="مثال: 0512345678"
+        [placeholder]="translationService.getPlaceholder('phone')"
+        [helpText]="translationService.getHelpText('phone')"
         [control]="registrationForm.get('phone')"
       ></app-form-field>
 
       <!-- Password -->
       <app-form-field
-        label="كلمة المرور"
+        [label]="translationService.getAuthText('register', 'password')"
         fieldName="password"
         type="password"
         [required]="true"
         [showPasswordToggle]="true"
-        placeholder="أدخل كلمة المرور"
-        helpText="يجب أن تحتوي على حرف كبير وحرف صغير ورقم"
+        [placeholder]="translationService.getPlaceholder('password')"
+        [helpText]="translationService.getHelpText('password')"
         [control]="registrationForm.get('password')"
       ></app-form-field>
 
       <!-- Confirm Password -->
       <app-form-field
-        label="تأكيد كلمة المرور"
+        [label]="translationService.getAuthText('register', 'confirm_password')"
         fieldName="confirmPassword"
         type="password"
         [required]="true"
         [showPasswordToggle]="true"
-        placeholder="أكد كلمة المرور"
+        [placeholder]="translationService.getPlaceholder('confirm_password')"
         [control]="registrationForm.get('confirmPassword')"
-        [customErrorMessages]="{ passwordMismatch: 'كلمات المرور غير متطابقة' }"
       ></app-form-field>
 
       <!-- Form Level Errors -->
@@ -76,7 +77,7 @@
         *ngIf="registrationForm.errors?.['passwordMismatch'] && registrationForm.get('confirmPassword')?.touched"
         [control]="null"
         fieldName="form"
-        [customErrorMessages]="{ passwordMismatch: 'كلمات المرور غير متطابقة' }"
+        [customErrorMessages]="{ passwordMismatch: translationService.getValidationMessage('password_mismatch') }"
       ></app-form-error>
 
       <!-- Submit Button -->
@@ -86,15 +87,15 @@
         class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200 font-medium"
       >
         <span *ngIf="isLoading" class="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span>
-        {{ isLoading ? 'جاري إنشاء الحساب...' : 'إنشاء حساب' }}
+        {{ isLoading ? translationService.getAuthText('register', 'submitting') : translationService.getAuthText('register', 'submit') }}
       </button>
 
       <!-- Login Link -->
       <div class="text-center mt-6">
         <p class="text-gray-600">
-          لديك حساب بالفعل؟
+          {{ translationService.getAuthText('register', 'already_have_account') }}
           <a routerLink="/auth/login" class="text-blue-600 hover:text-blue-800 font-medium">
-            تسجيل الدخول
+            {{ translationService.getAuthText('register', 'sign_in') }}
           </a>
         </p>
       </div>

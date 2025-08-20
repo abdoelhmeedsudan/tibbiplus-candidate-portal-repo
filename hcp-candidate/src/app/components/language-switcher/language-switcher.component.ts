@@ -1,6 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
+import { TranslationService } from '../../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-language-switcher',
@@ -53,20 +55,36 @@ import { LanguageService } from '../../services/language.service';
     }
   `]
 })
-export class LanguageSwitcherComponent {
+export class LanguageSwitcherComponent implements OnInit, OnDestroy {
   public languageService = inject(LanguageService);
+  public translationService = inject(TranslationService);
   public showDropdown = false;
+  private subscription = new Subscription();
 
   public get currentLanguage() {
     return this.languageService.currentLanguage();
   }
 
+  ngOnInit(): void {
+    // Subscribe to language changes to sync between services
+    this.subscription.add(
+      this.translationService.currentLanguage$.subscribe(language => {
+        // Update the old language service to stay in sync
+        this.languageService.setLanguage(language.code as 'ar' | 'en');
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   public toggleLanguage(): void {
-    this.languageService.toggleLanguage();
+    this.translationService.toggleLanguage();
   }
 
   public selectLanguage(langCode: 'ar' | 'en'): void {
-    this.languageService.setLanguage(langCode);
+    this.translationService.setLanguage(langCode);
     this.showDropdown = false;
   }
 

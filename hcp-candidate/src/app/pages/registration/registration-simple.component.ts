@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { LanguageService } from '../../services/language.service';
+import { TranslationService } from '../../services/translation.service';
 import { FormErrorComponent } from '../../components/form-error/form-error.component';
 import { FormFieldComponent } from '../../components/form-field/form-field.component';
 
@@ -30,7 +31,8 @@ export class RegistrationSimpleComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    public translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
@@ -91,7 +93,7 @@ export class RegistrationSimpleComponent implements OnInit {
       this.authService.register(submitData).subscribe({
         next: (response) => {
           this.isLoading = false;
-          this.successMessage = 'تم إنشاء الحساب بنجاح! يمكنك الآن تسجيل الدخول.';
+          this.successMessage = this.translationService.getMessage('success', 'registration');
           
           // Redirect to login after successful registration
           setTimeout(() => {
@@ -100,7 +102,7 @@ export class RegistrationSimpleComponent implements OnInit {
         },
         error: (error) => {
           this.isLoading = false;
-          this.errorMessage = error.error?.message || 'حدث خطأ أثناء إنشاء الحساب. يرجى المحاولة مرة أخرى.';
+          this.errorMessage = error.error?.message || this.translationService.getMessage('errors', 'registration');
         }
       });
     } else {
